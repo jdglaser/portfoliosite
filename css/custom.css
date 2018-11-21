@@ -1,0 +1,36 @@
+#profile-pic {
+    margin-top: 25px;
+}
+
+.section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contact {
+    font-size: 32px;
+    padding: 5px;
+    color: black;
+}
+
+.contact:hover {
+    color: grey
+}
+
+.edu-wrapper { 
+    display: table-row;
+    border-collapse:separate; 
+    border-spacing: 5px 10px
+}
+.edu-details { 
+    display: table-cell;
+}
+.fa-graduation-cap {
+    font-size: 20px;
+    display: table-cell; 
+    width: 32px;
+}
+
+html {
+    scroll-behavior: smooth;
+  }

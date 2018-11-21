@@ -1,37 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/custom.css">
-</head>
+
+    <title>Jarred Glaser</title>
+
+  </head>
   <body>
-    <div class="container">
+    <div class="container shadow-sm p-3 mb-5 bg-white rounded" style="margin-top: 25px">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                      <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="#about-me">About<span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#education">Education</a>
+                        <a class="nav-item nav-link" href="#experience">Experience</a>
+                        <a class="nav-item nav-link" href="#projects">Projects</a>
+                        <a class="nav-item nav-link" href="#contact">Contact</a>
+                      </div>
+                    </div>
+                  </nav>
         <div class="row">
-            <div class="col-md text-center">
-                    <img src="/img/me.JPG" class="img-circle" width="20%" width="20%" style="margin-top: 75px">
-                    <h1 style="margin-bottom: -10px"><b>Jarred Glaser</b></h1>
-                    <h3>
-                        <p class="text-muted">Business Intelligence Analyst</p>
-                        <p class="text-muted">Johnson Controls Inc.</p>
-                    </h3>
+            <div class="col-md">
+                <div class="text-center">
+                        <img src="/img/me.JPG" id="profile-pic" class="rounded-circle" width="20%" width="20%">
+                        <h2><b>Jarred Glaser</b></h1>
+                        <h5>
+                            <span class="text-muted">Business Intelligence Analyst</span><br>
+                            <span class="text-muted">Johnson Controls Inc.</span>
+                        </h5>
+                        <a href="https://www.linkedin.com/in/jarred-glaser/"><i title="LinkedIn" class="fab fa-linkedin contact"></i></a>
+                        <a href="https://github.com/jdglaser"><i title="GitHub" class="fab fa-github contact"></i></a>
+                        <a href="mailto:jarred.glaser@gmail.com"><i title="Email" class="fas fa-envelope contact"></i></a>
+                </div>
+                <div class="section" id="about-me">
+                    <h2>About</h2>
+                    <hr>
+                    <span><p>Hi, my name is Jarred, and welcome to my personal website! 
+                        I am a data analytics and business intelligence professional and lover of all things data. 
+                        I love to interpret and analyze data to drive insights and find answers to interesting problems. 
+                        Day to day, I work with all sorts of data analytics technologies and methods to scrape, collect, analyze, interpret, 
+                        and do just about everything with data. I am always hungry for more knowledge and self development, so I often find myself 
+                        taking online courses or reading books in my free time to learn more about things like machine learning, programming, 
+                        data engineering, and statistics.</p>
+
+                        <p>When I’m not working, doing online courses, or diving head first into a new data set, I enjoy playing video games, 
+                            participating in group fitness classes at my gym, playing guitar, and going out to delicious local restaurants with my 
+                            girlfriend. I am a self-proclaimed Star Wars geek and I love watching tv shows on Netflix, some of my personal 
+                            favorites being Cheers and The Office.</p>
+                        
+                        <p>Thank you for visiting my personal portfolio website. Please feel free to contact me if you have any questions about my 
+                            work or experience or if you just want to talk about the amazing world of data.</p>
+                        </span>
+                </div>
+                
+                <div class="section" id="education">
+                    <h2>Education</h2>
+                    <hr>
+                    <div class="edu-wrapper">
+                        <div class="edu-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="edu-details">
+                                <h4>MA Economics</h4>
+                                <h5 class="text-muted">University of Wisconsin - Milwaukee</h5>
+                                <h5 class="text-muted">Graduated 2018</h5>
+                            </div>
+                        </div>
+
+                        <div class="edu-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="edu-details">
+                                <h4>BA Economics</h4>
+                                <h5 class="text-muted">University of Wisconsin - Milwaukee</h5>
+                                <h5 class="text-muted">Graduated 2017</h5>
+                            </div>
+                        </div>
+
+                        <div class="edu-item">
+                        <i class="fas fa-graduation-cap"></i>
+                            <div class="edu-details">
+                                <h4>Certificate C++ Programming</h4>
+                                <h5 class="text-muted">Champlain College</h5>
+                                <h5 class="text-muted">Expected Graduation 2020</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
   </body>
 </html>
