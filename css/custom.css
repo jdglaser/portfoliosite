@@ -35,9 +35,11 @@
     width: 32px;
 }
 
+/*
 html {
     scroll-behavior: smooth;
 }
+*/
 
 .exp-wrapper {
     display: table-row;
