@@ -20,11 +20,13 @@
 .edu-wrapper { 
     display: table-row;
     border-collapse:separate; 
-    border-spacing: 5px 10px
+    border-spacing: 5px 10px;
+    max-width: 250px
 }
 
 .edu-details { 
     display: table-cell;
+    width: 350px
 }
 
 .bullet {
@@ -40,18 +42,22 @@ html {
 .exp-wrapper {
     display: table-row;
     border-collapse:separate; 
-    border-spacing: 5px 10px
+    border-spacing: 5px 10px;
 }
 
 .exp-details {
     display: table-cell;
+    width: 350px
 }
 
-.fa-briefcase {
-    vertical-align: 5px;
-    font-size: 20px;
-    width: 32px;
-}
 .raise-item {
     transition: all .2s ease-in-out
 }
+  
+span#hiding {
+    position: absolute;
+    margin-top: 400px;
+    display: none;
+}
+
+  
