@@ -1,3 +1,25 @@
+
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
 #profile-pic {
     margin-top: 25px;
 }
@@ -77,5 +99,66 @@ span#hiding {
     padding: 10px;
     border-radius: 4px;
   }
+
+
+.deco-none {
+color: inherit;
+text-decoration: inherit;
+}
+
+.deco-none:link {
+color: inherit;
+text-decoration: inherit;
+}
+
+.deco-none:hover {
+color: inherit;
+text-decoration: inherit;
+}
+
+.project {
+    width: 150px;
+    height: 100px;
+    background-color: lightgrey;
+    margin: 20px;
+}
+
+.filter {
+    position: relative;
+  }
+  
+.filter.active:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 15px 0 0;
+    border-color: #333 transparent transparent transparent;
+  }
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    height: 250px;
+}
+
+@keyframes zoom-in {
+    0% {
+     transform: scale(.1);
+    }
+    100% {
+      transform: none;
+    }
+}
+  
+.is-animated {
+    animation: .6s zoom-in;
+}
+
 
   

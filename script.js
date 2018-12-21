@@ -25,7 +25,7 @@ function scrollFunction() {
     }
 }
 
-// Smooth Scroll for browsers that don't support scroll-behavior css
+// Smooth scroll for browsers that don't support scroll-behavior css
 $(document).ready(function(){
     // Add smooth scrolling to all links
     $("a").on('click', function(event) {
@@ -49,3 +49,34 @@ $(document).ready(function(){
       } // End if
     });
   });
+
+// Sorting Function
+var $filters = $('.filter [data-filter]'),
+    $boxes = $('.boxes [data-category]');
+
+$filters.on('click', function(e) {
+  e.preventDefault();
+  var $this = $(this);
+  $filters.removeClass('active');
+  $this.addClass('active');
+
+  var $filterColor = $this.attr('data-filter');
+
+  if ($filterColor == 'all') {
+    $boxes.removeClass('is-animated').removeClass('raise-item')
+      .fadeOut(400).promise().done(function() {
+        $boxes.addClass('is-animated').fadeIn().addClass('raise-item');
+      });
+  } else {
+    $boxes.removeClass('is-animated').removeClass('raise-item')
+      .fadeOut(400).promise().done(function() {
+        $boxes.filter('[data-category = "' + $filterColor + '"]')
+          .addClass('is-animated').fadeIn().addClass('raise-item');
+      });
+  }
+});
+
+$('.raise-item').hover(
+  function(){ $(this).addClass('shadow-lg p-3 mb-5 bg-white rounded') },
+  function(){ $(this).removeClass('shadow-lg p-3 mb-5 bg-white rounded').addClass('shadow-sm p-3 mb-5 bg-white rounded') 
+})
