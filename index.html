@@ -81,7 +81,7 @@
                 <div class="section" id="education">
                     <h2>Education</h2>
                     <hr>
-                    <div class="edu-wrapper">
+                    <div class="section-wrapper">
                         <div class="edu-item shadow-sm p-3 mb-5 bg-white rounded raise-item">
                             <i class="fas fa-graduation-cap bullet"></i>
                             <div class="edu-details">
@@ -112,68 +112,103 @@
                 </div>
 
                 <!-- Experience Section -->
-                <div class="section" id="experience">
+                <div class="container" id="experience">
                     <h2>Experience</h2>
                     <hr>
-                    <div class="exp-wrapper">
-
+                    <div class="section-wrapper">
                         <!-- Experience #1 -->
-                        <div class="exp-item shadow-sm p-3 mb-5 bg-white rounded raise-item panel-heading">
-                            <i class="fas fa-briefcase bullet"></i>
-                            <div class="exp-details panel panel-default">
-                                <div class="test2">
-                                    <h4>Business Intelligence Analyst</h4>
-                                    <h5 class="text-muted">Johnson Controls Inc.</h5>
-                                    <h5 class="text-muted">June 2018 - Present<i class="expand fas fa-plus" style="float: right"></i></h5>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse panel-body" role="tabpanel" aria-labelledby="headingOne">
-                                    <h6>Responsibilities Include:</h6>
-                                    <ul>
-                                        <li>Support the global marketing organization by driving insights through data analytics and BI</li>
-                                        <li>Develop, test, and manage data warehousing and ETL processes for internal team</li>
-                                        <li>Present, deploy, and maintain analytics dashboards to marketing organizaiton</li>
-                                    </ul>
-                                </div>
+                        <div class="row exp-item shadow-sm p-3 mb-5 bg-white rounded raise-item">
+                            <div class="col">
+                                <table>
+                                    <tr>
+                                        <td class="td-1"><i class="fas fa-briefcase bullet"></i></td>
+                                        <td class="td-2"><h4>Business Intelligence Analyst</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-1"></td>
+                                        <td class="td-2"><h5 class="text-muted">Johnson Controls Inc.</h5></td>
+                                    <tr>
+                                        <td class="td-1"></td>
+                                        <td class="td-2"><h5><span class="text-muted">June 2018 - Present</span><i class="expand fas fa-plus" expand='exp-1' style="float: right"></i></h5></td>
+                                    </tr>
+                                    <tr> 
+                                        <td class="td-1"></td>
+                                        <td class="td-2">
+                                            <div class="content" expand='exp-1'>
+                                                <h6>Responsibilities Include:</h6>
+                                                <ul>
+                                                    <li>Support the global marketing organization by driving insights through data analytics and BI</li>
+                                                    <li>Develop, test, and manage data warehousing and ETL processes for internal team</li>
+                                                    <li>Present, deploy, and maintain analytics dashboards to marketing organizaiton</li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                         
                         <!-- Experience #2 -->
-                        <div class="exp-item shadow-sm p-3 mb-5 bg-white rounded raise-item panel-heading">
-                                <i class="fas fa-briefcase bullet"></i>
-                                <div class="exp-details panel panel-default">
-                                    <div class="test2">
-                                        <h4>Business Intelligence and Analytics Intern</h4>
-                                        <h5 class="text-muted">Johnson Controls Inc.</h5>
-                                        <h5 class="text-muted">October 2017 - June 2018</h5>
-                                    </div>
-                                    <div id="collapseOne" class="panel-collapse collapse panel-body" role="tabpanel" aria-labelledby="headingOne">
-                                        <h6>Responsibilities Included:</h6>
-                                        <ul>
-                                            <li>Worked under the data analytics team to conduct business intelligence projects</li>
-                                            <li>Used Python, R, and SQL to organize, collect, and analyze company and external data</li>
-                                            <li>Created data visualizations for projects in Tableau and R-Studio</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                        <div class="row exp-item shadow-sm p-3 mb-5 bg-white rounded raise-item">
+                            <div class="col">
+                                <table>
+                                    <tr>
+                                        <td class="td-1"><i class="fas fa-briefcase bullet"></i></td>
+                                        <td class="td-2"><h4>Business Intelligence and Analytics Intern</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-1"></td>
+                                        <td class="td-2"><h5 class="text-muted">Johnson Controls Inc.</h5></td>
+                                    <tr>
+                                        <td class="td-1"></td>
+                                        <td class="td-2"><h5><span class="text-muted">October 2017 - June 2018</span><i class="expand fas fa-plus" expand='exp-2' style="float: right"></i></h5></td>
+                                    </tr>
+                                    <tr> 
+                                        <td class="td-1"></td>
+                                        <td class="td-2">
+                                            <div class="content" expand='exp-2'>
+                                                <h6>Responsibilities Include:</h6>
+                                                <ul>
+                                                    <li>Worked under the data analytics team to conduct business intelligence projects</li>
+                                                    <li>Used Python, R, and SQL to organize, collect, and analyze company and external data</li>
+                                                    <li>Created data visualizations for projects in Tableau and R-Studio</li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
-                        
+                        </div>
+
                         <!-- Experience #3 -->
-                        <div class="exp-item shadow-sm p-3 mb-5 bg-white rounded raise-item panel-heading">
-                            <i class="fas fa-briefcase bullet"></i>
-                            <div class="exp-details panel panel-default">
-                                <div class="test2">
-                                    <h4>Research Intern</h4>
-                                    <h5 class="text-muted">Argosy Foundation</h5>
-                                    <h5 class="text-muted">January 2017 - May 2017</h5>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse panel-body" role="tabpanel" aria-labelledby="headingOne">
-                                    <h6>Responsibilities Included:</h6>
-                                    <ul>
-                                        <li>Conducted research for projects assigned by trustees and supervisors</li>
-                                        <li>Analyzed and evaluated grant proposals from Argosy partners</li>
-                                        <li>Presented research findings in a professional and accessible format</li>
-                                    </ul>
-                                </div>
+                        <div class="row exp-item shadow-sm p-3 mb-5 bg-white rounded raise-item">
+                            <div class="col">
+                                <table>
+                                    <tr>
+                                        <td class="td-1"><i class="fas fa-briefcase bullet"></i></td>
+                                        <td class="td-2"><h4>Research Intern</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-1"></td>
+                                        <td class="td-2"><h5 class="text-muted">Argosy Foundation</h5></td>
+                                    <tr>
+                                        <td class="td-1"></td>
+                                        <td class="td-2"><h5><span class="text-muted">January 2017 - May 2017</span><i class="expand fas fa-plus" expand='exp-3' style="float: right"></i></h5></td>
+                                    </tr>
+                                    <tr> 
+                                        <td class="td-1"></td>
+                                        <td class="td-2">
+                                            <div class="content" expand='exp-3'>
+                                                <h6>Responsibilities Include:</h6>
+                                                <ul>
+                                                    <li>Conducted research for projects assigned by trustees and supervisors</li>
+                                                    <li>Analyzed and evaluated grant proposals from Argosy partners</li>
+                                                    <li>Presented research findings in a professional and accessible format</li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>

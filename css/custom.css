@@ -39,11 +39,8 @@
     color: grey
 }
 
-.edu-wrapper { 
-    display: table-row;
-    border-collapse:separate; 
-    border-spacing: 5px 10px;
-    max-width: 250px
+.section-wrapper { 
+    max-width: 450px
 }
 
 .edu-details { 
@@ -53,29 +50,22 @@
 
 .bullet {
     font-size: 20px;
-    display: table-cell; 
     width: 32px;
+    margin-bottom: 8px;
 }
 
 .expand {
     cursor: pointer;
+}
+
+.content {
+    display: none;
 }
 /*
 html {
     scroll-behavior: smooth;
 }
 */
-
-.exp-wrapper {
-    display: table-row;
-    border-collapse:separate; 
-    border-spacing: 5px 10px;
-}
-
-.exp-details {
-    display: table-cell;
-    width: 350px
-}
 
 .raise-item {
     transition: all .2s ease-in-out
@@ -155,5 +145,14 @@ text-decoration: inherit;
     animation: .6s zoom-in;
 }
 
+.td-1 {
+    width: 30px;
+    vertical-align: center;
+}
+
+.td-2 {
+    width: 450px;
+    vertical-align: center;
+}
 
   

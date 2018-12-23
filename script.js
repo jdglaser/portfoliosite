@@ -4,15 +4,16 @@ $('.raise-item').hover(
     function(){ $(this).removeClass('shadow-lg p-3 mb-5 bg-white rounded').addClass('shadow-sm p-3 mb-5 bg-white rounded') }
 )
 
-// Panel collapsing
-$(".panel-heading").hover(
-    function() {
-      $(this).children('.panel').children('.collapse').collapse('show');
-    }, function() {
-      $(this).children('.panel').children('.collapse').collapse('hide');
+$('.expand').click(function(){
+  var $expand = $(this).attr('expand')
+  if ($(this).is(".fa-plus")) {
+    $(this).toggleClass("fa-plus fa-minus")
     }
-  );
-
+  else {
+    $(this).toggleClass("fa-minus fa-plus")
+  }
+  $('.content').filter('[expand = "' + $expand + '"]').slideToggle('slow');
+});
 
 // Scroll back to top btn
 window.onscroll = function() {scrollFunction()};
@@ -51,29 +52,31 @@ $(document).ready(function(){
   });
 
 // Sorting Function
-var $filters = $('.filter [data-filter]'),
-    $boxes = $('.boxes [data-category]');
+$(document).ready(function(){
+  var $filters = $('.filter [data-filter]'),
+      $boxes = $('.boxes [data-category]');
 
-$filters.on('click', function(e) {
-  e.preventDefault();
-  var $this = $(this);
-  $filters.removeClass('active');
-  $this.addClass('active');
+  $filters.on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    $filters.removeClass('active');
+    $this.addClass('active');
 
-  var $filterColor = $this.attr('data-filter');
+    var $filterColor = $this.attr('data-filter');
 
-  if ($filterColor == 'all') {
-    $boxes.removeClass('is-animated').removeClass('raise-item')
-      .fadeOut(400).promise().done(function() {
-        $boxes.addClass('is-animated').fadeIn().addClass('raise-item');
-      });
-  } else {
-    $boxes.removeClass('is-animated').removeClass('raise-item')
-      .fadeOut(400).promise().done(function() {
-        $boxes.filter('[data-category = "' + $filterColor + '"]')
-          .addClass('is-animated').fadeIn().addClass('raise-item');
-      });
-  }
+    if ($filterColor == 'all') {
+      $boxes.removeClass('is-animated').removeClass('raise-item')
+        .fadeOut(400).promise().done(function() {
+          $boxes.addClass('is-animated').fadeIn().addClass('raise-item');
+        });
+    } else {
+      $boxes.removeClass('is-animated').removeClass('raise-item')
+        .fadeOut(400).promise().done(function() {
+          $boxes.filter('[data-category = "' + $filterColor + '"]')
+            .addClass('is-animated').fadeIn().addClass('raise-item');
+        });
+    }
+  });
 });
 
 $('.raise-item').hover(
