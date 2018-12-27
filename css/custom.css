@@ -104,10 +104,13 @@ text-decoration: inherit;
 }
 
 .project {
-    width: 150px;
-    height: 100px;
+    width: 300px;
+    height: 125px;
     background-color: lightgrey;
     margin: 20px;
+    text-align: center;
+    font-size: 16px;
+    text-align-last: center
 }
 
 .filter {
@@ -171,8 +174,14 @@ text-decoration: inherit;
         grid-template-columns: 175px;
         grid-gap: 10px;
     }
-  }
+}
 
+.desc {
+    height: 65px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
 
   
