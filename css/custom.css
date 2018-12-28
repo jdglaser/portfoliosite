@@ -29,7 +29,8 @@
 }
 
 .section-wrapper { 
-    max-width: 450px
+    max-width: 450px;
+    margin-left: 15px
 }
 
 .contact {
@@ -167,6 +168,24 @@ text-decoration: inherit;
     grid-gap: 10px;
 }
 
+.grid-container-3 {
+    display: grid;
+    width: 400px;
+    grid-column-gap: 20px;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+}
+
+.grid-3-item {
+    text-align: center;
+    font-size: 35px;
+}
+
+.skill-logo:hover {
+    color: darkgrey;
+    cursor: pointer;
+}
+
 @media (max-width: 700px) {
     .grid-container-2 {
         display: grid;
@@ -181,6 +200,10 @@ text-decoration: inherit;
     display:flex;
     justify-content:center;
     align-items:center;
+}
+
+.section-item {
+
 }
 
 

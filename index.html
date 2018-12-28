@@ -58,7 +58,7 @@
                 </div>
 
                 <!-- About section -->
-                <div class="container" id="about-me">
+                <div class="section" id="about-me">
                     <h2>About</h2>
                     <hr>
                     <span><p>Hi, my name is Jarred, and welcome to my personal website! 
@@ -80,7 +80,7 @@
                 </div>
                 
                 <!-- Education Section -->
-                <div class="container" id="education">
+                <div class="section" id="education">
                     <h2>Education</h2>
                     <hr>
                     <div class="section-wrapper">
@@ -148,7 +148,7 @@
                 </div>
 
                 <!-- Experience Section -->
-                <div class="container" id="experience">
+                <div class="section" id="experience">
                     <h2>Experience</h2>
                     <hr>
                     <div class="section-wrapper">
@@ -197,7 +197,7 @@
                                         <td class="td-2"><h5 class="text-muted">Johnson Controls Inc.</h5></td>
                                     <tr>
                                         <td class="td-1"></td>
-                                        <td class="td-2"><h5><span class="text-muted">October 2017 - June 2018</span><i class="expand fas fa-plus" expand='exp-2' style="float: right"></i></h5></td>
+                                        <td class="td-2"><h5><span class="text-muted">Oct. 2017 - June 2018</span><i class="expand fas fa-plus" expand='exp-2' style="float: right"></i></h5></td>
                                     </tr>
                                     <tr> 
                                         <td class="td-1"></td>
@@ -229,7 +229,7 @@
                                         <td class="td-2"><h5 class="text-muted">Argosy Foundation</h5></td>
                                     <tr>
                                         <td class="td-1"></td>
-                                        <td class="td-2"><h5><span class="text-muted">January 2017 - May 2017</span><i class="expand fas fa-plus" expand='exp-3' style="float: right"></i></h5></td>
+                                        <td class="td-2"><h5><span class="text-muted">Jan. 2017 - May 2017</span><i class="expand fas fa-plus" expand='exp-3' style="float: right"></i></h5></td>
                                     </tr>
                                     <tr> 
                                         <td class="td-1"></td>
@@ -250,11 +250,31 @@
                     </div>
                 </div>
 
+                <!-- Skills Section -->
+                <div class="section" id="skills">
+                    <h2>Skills</h2>
+                    <hr>
+                    <div class="section-wrapper">
+                        <div class="shadow-sm p-3 mb-5 bg-white rounded raise-item section-item">
+                            <div>
+                                <h4>Technologies</h4>
+                                <div class="grid-container-3">
+                                    <div class="grid-3-item"><i class="fab fa-r-project skill-logo" data-toggle="tooltip" data-placement="top" title="R and R-Studio"></i></div>
+                                    <div class="grid-3-item"><i class="fab fa-js-square skill-logo" data-toggle="tooltip" data-placement="top" title="JavaScript"></i></div>
+                                    <div class="grid-3-item"><i class="fab fa-python skill-logo" data-toggle="tooltip" data-placement="top" title="Python"></i></div>
+                                    <dic class="grid-3-item"><i class="fab fa-html5 skill-logo" data-toggle="tooltip" data-placement="top" title="HTML5"></i></dic>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Projects Section -->
                 <div class="section" id="projects">
                     <h2>Projects</h2>
                     <hr>
 
+                    <!-- Filter Buttons -->
                     <div class="filter grid-container-1">
                         <div class="grid-column grid-container-2">
                             <button class="all active btn btn-secondary grid-item" type="button" data-filter="all">All</button>
@@ -265,8 +285,9 @@
                         <div class="grid-column"></div>
                     </div>
 
+                    <!-- Start adding projects below -->
                     <div class="boxes scrollbar" id="style-1">
-                        <a href="https://github.com/jdglaser/mathesis" class="deco-none">
+                        <a href="https://github.com/jdglaser/mathesis" target="_blank" class="deco-none">
                             <div data-category="machine-learning" class="exp-item shadow-sm p-3 mb-5 bg-white rounded project raise-item">
                                 <div class="desc">Using Machine Learning and Google Searches to Predict Stock Market Changes</div>
                                 <hr style="margin-bottom: 5px; margin-top: 5px;">
@@ -274,7 +295,7 @@
                             </div>
                         </a>
 
-                        <a href="https://github.com/jdglaser/fast-to-sql" class="deco-none">
+                        <a href="https://github.com/jdglaser/fast-to-sql" target="_blank" class="deco-none">
                             <div data-category="programming" class="exp-item shadow-sm p-3 mb-5 bg-white rounded project raise-item">
                                 <div class="desc">fast-to-sql Python Module</div>
                                 <hr style="margin-bottom: 5px; margin-top: 5px;">
@@ -282,7 +303,7 @@
                             </div>
                         </a>
 
-                        <a href="https://github.com/jdglaser/PyHealthDefinitive" class="deco-none">
+                        <a href="https://github.com/jdglaser/PyHealthDefinitive" target="_blank" class="deco-none">
                             <div data-category="programming" class="exp-item shadow-sm p-3 mb-5 bg-white rounded project raise-item">
                                 <div class="desc">PyHealthDefinitive Python API Wrapper</div>
                                 <hr style="margin-bottom: 5px; margin-top: 5px;">
@@ -295,7 +316,6 @@
         </div>
     </div>
 
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
