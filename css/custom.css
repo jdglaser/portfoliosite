@@ -181,6 +181,11 @@ text-decoration: inherit;
     font-size: 35px;
 }
 
+.skill-img {
+    height: 15%;
+    width: 15%;
+}
+
 .skill-logo:hover {
     color: darkgrey;
     cursor: pointer;
@@ -193,6 +198,14 @@ text-decoration: inherit;
         grid-template-columns: 175px;
         grid-gap: 10px;
     }
+
+    .grid-container-3 {
+        display: grid;
+        width: 300px;
+        grid-column-gap: 20px;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+    }
 }
 
 .desc {
@@ -203,8 +216,4 @@ text-decoration: inherit;
 }
 
 .section-item {
-
 }
-
-
-  
