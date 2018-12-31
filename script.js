@@ -1,8 +1,13 @@
 // Raise items
 $('.raise-item').hover(
-    function(){ $(this).addClass('shadow-lg p-3 mb-5 bg-white rounded') },
-    function(){ $(this).removeClass('shadow-lg p-3 mb-5 bg-white rounded').addClass('shadow-sm p-3 mb-5 bg-white rounded') }
-)
+    function(){
+    if ($(this).is(".shadow-lg bg-white rounded")) {
+      $(this).toggleClass("shadow-lg bg-white rounded shadow-sm bg-white rounded")
+      }
+    else {
+      $(this).toggleClass("shadow-sm bg-white rounded shadow-lg bg-white rounded")
+    }
+  });
 
 $('.expand').click(function(){
   var $expand = $(this).attr('expand')
@@ -79,10 +84,6 @@ $(document).ready(function(){
   });
 });
 
-$('.raise-item').hover(
-  function(){ $(this).addClass('shadow-lg p-3 mb-5 bg-white rounded') },
-  function(){ $(this).removeClass('shadow-lg p-3 mb-5 bg-white rounded').addClass('shadow-sm p-3 mb-5 bg-white rounded') 
-})
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
