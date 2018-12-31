@@ -21,6 +21,7 @@
 
 #profile-pic {
     margin-top: 25px;
+    border: solid 3px #6C757D
 }
 
 .section {
@@ -236,6 +237,7 @@ text-decoration: inherit;
     padding-bottom: 5px;
     border-bottom: 1px solid lightslategray;
 }
+
 
 
 
