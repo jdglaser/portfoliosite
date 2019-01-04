@@ -1,0 +1,607 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week_5_Notes</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="week-5">Week 5</h1>
+<h2 id="overview">Overview</h2>
+<p>In week 5, we will be exploring simple data structures in Python, specifically lists. Lists are a structure for holding a series of variables and you will find them to be incredibly useful as we build more complicated programs.</p>
+<p>We will also begin to look at how computers are able to manipulate binary and how memory storage works inside of a computer.</p>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>Explain how logic gates are used to add binary numbers</li>
+<li>Understand the difference between Kilobytes, Megabytes, and Mebibytes</li>
+<li>Explain the different types of memory used in the computer and the reason for each type</li>
+<li>Use Python lists in programs and understand their use</li>
+<li>Be familiar with Strings and Tuples</li>
+</ul>
+<h2 id="activities-and-assignments">Activities and Assignments</h2>
+<ul>
+<li>Week 5: Discussion - Memory and Mebibytes</li>
+<li>Week 5: Assignment - Programming with Lists</li>
+<li>Week 5: Self-Paced Assignment</li>
+</ul>
+<h2 id="lesson">Lesson</h2>
+<h3 id="storage-and-memory">Storage and Memory</h3>
+<ul>
+<li>The <strong>Central Processing Unit (CPU)</strong> has “registers” that allow it to store the limited amount of data that the CPU is actively working with</li>
+<li>This data could be intructions or data to be manipulated</li>
+<li>Because the size of these registers is so limited, other kinds of memory are needed</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p3q5zWCw8J4" allowfullscreen=""></iframe>
+<p><strong>Question</strong>: Which of the following is the fastest?</p>
+<p>A. DRAM</p>
+<p>B. Hard Drive</p>
+<p>C. SRAM</p>
+<p>D. SSD</p>
+<p>E. CD-ROM</p>
+<p><strong>Answer</strong>: <strong>C</strong> - SRAM</p>
+<p><strong>Question</strong>: An unopened photo is kept in the ___ of a computer?</p>
+<p>A. CPU’s cache</p>
+<p>B. Hard Drive</p>
+<p>C. RAM</p>
+<p>D. None of the above</p>
+<p><strong>Answer</strong>: <strong>B.</strong> - Hard Drive</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C_NbeOaUtog" allowfullscreen=""></iframe>
+<p><strong>Question</strong>: Which of the following is an example of volatile memory?</p>
+<p>A. Hard Drive</p>
+<p>B. DRAM</p>
+<p>C. SSD</p>
+<p>D. CD-ROM</p>
+<p><strong>Answer</strong>: CD-ROM</p>
+<h3 id="megabytes-and-mebibytes">Megabytes and Mebibytes</h3>
+<ul>
+<li>Recall that 1 byte = 8 bits</li>
+</ul>
+<h4 id="word">Word</h4>
+<ul>
+<li>Older computers originally were designed to do operations 8 bits at a time</li>
+<li>Modern processors are typically 32-bit or 64-bit</li>
+<li>The term <strong>“Word”</strong> refers to the chunks of the bits the processor is designed to operate on
+<ul>
+<li>So usually a “Word” is either 32 or 64 bits in size but it depends on the architecture of the specific machine</li>
+</ul>
+</li>
+</ul>
+<h4 id="kilobyte">Kilobyte</h4>
+<ul>
+<li>A <strong>Kilobyte</strong> is approximately 1000 bytes</li>
+<li>It is aproximately because on most computer hardware, a Kilobyte is 1024 bytes (<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>1</mn></msup><mn>0</mn><mo>=</mo><mn>1</mn><mo>−</mo><mn>24</mn></mrow><annotation encoding="application/x-tex">2^10=1-24</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.814108em; vertical-align: 0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span><span class="mord">0</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">2</span><span class="mord">4</span></span></span></span></span>)</li>
+</ul>
+<h4 id="megabyte">Megabyte</h4>
+<ul>
+<li>A <strong>Megabyte</strong> is approximately 1000 Kilobytes</li>
+<li>Actually about 1024 kilobytes</li>
+<li>So 1 megabyte is 1,048,576 bytes since 1024 x 1024 = 1048576</li>
+</ul>
+<h4 id="gigabyte">Gigabyte</h4>
+<ul>
+<li>A <strong>Gigabyte</strong> is approximately 1024 Megabytes</li>
+</ul>
+<h4 id="terabyte">Terabyte</h4>
+<ul>
+<li>A <strong>Terabyte</strong> is approximately 1024 Gigabytes</li>
+</ul>
+<h4 id="petabyte">Petabyte</h4>
+<ul>
+<li>A <strong>Petabyte</strong> is approximately 1024 Terabytes</li>
+</ul>
+<h3 id="why-approximately-and-what-is-a-kibibyte">Why approximately? And what is a Kibibyte</h3>
+<ul>
+<li>The term <strong>kilo</strong> in any context outside of computer science means 1000 not 1024</li>
+<li>The IEEE proposed that we use new terms that were more precise:
+<ul>
+<li><strong>kilobyte (kB)</strong> -&gt; <strong>kibibyte (KiB)</strong></li>
+<li><strong>megabyte (MB)</strong> -&gt; <strong>mebibyte (MiB)</strong></li>
+<li><strong>gigabyte (GB)</strong> -&gt; <strong>gibibyte (GiB)</strong></li>
+<li><strong>terrabyte (TB)</strong> -&gt; <strong>tebibyte (TiB)</strong></li>
+</ul>
+</li>
+<li>These terms always refer to the base 2 value</li>
+<li>However, rarely used in practice</li>
+</ul>
+<h3 id="how-binary-and-logic-gates-work-in-a-computer">How Binary and Logic Gates Work in a Computer</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VBDoT8o4q00" allowfullscreen=""></iframe>
+<br>
+<p><strong>How transistors work:</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WhNyURBiJcU" allowfullscreen=""></iframe>
+<h3 id="the-list-data-type">The List Data Type</h3>
+<ul>
+<li>A <strong>list</strong> is a value that contains multiple values in an ordered sequence</li>
+<li>Values inside the list are called <strong>items</strong></li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token number">3.1415</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token number">3.1415</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+</code></pre>
+<h3 id="getting-individual-values-in-a-list-with-indexes">Getting Individual Values in a List with Indexes</h3>
+<img src="list_selecting.PNG" height="50%" width="50%">
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token string">'cat'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token string">'bat'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token string">'rat'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token string">'elephant'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token string">'elephant'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello '</span> <span class="token operator">+</span> spam<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token string">'Hello cat'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'The '</span> <span class="token operator">+</span> spam<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">' ate the '</span> <span class="token operator">+</span> spam<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'.'</span>
+<span class="token string">'The bat ate the cat.'</span>
+</code></pre>
+<ul>
+<li>Python will give an index error if you use an index that exceeds the number of values in your list</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python">spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+spam<span class="token punctuation">[</span><span class="token number">10000</span><span class="token punctuation">]</span>
+</code></pre>
+<pre><code>Traceback (most recent call last):
+File "&lt;pyshell#9&gt;", line 1, in &lt;module&gt;
+spam[10000]
+IndexError: list index out of range
+</code></pre>
+<ul>
+<li>Lists can also contain other list values</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token string">'bat'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token number">50</span>
+</code></pre>
+<ul>
+<li>You can also use negative indexes to select items from the end of the list</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token string">'elephant'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token string">'bat'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'The '</span> <span class="token operator">+</span> spam<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">' is afraid of the '</span> <span class="token operator">+</span> spam<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'.'</span>
+<span class="token string">'The elephant is afraid of the bat.'</span>
+</code></pre>
+<h3 id="getting-sublists-with-slices">Getting Sublists with Slices</h3>
+<ul>
+<li>
+<p>Just as an index can get a single value from a list, a <strong>slice</strong> can get several values from a list, in the form of a new list</p>
+</li>
+<li>
+<p>A slice goes up to, but will not include, the value at the seocnd index</p>
+</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>You can leave out one or both of the indexes on either side of the colon in the slice</li>
+<li>Leaving out the first index is the same as using <code>0</code></li>
+<li>Leaving out the last index is the same as using the length of the list</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+</code></pre>
+<h3 id="getting-a-list’s-length-with-len">Getting a List’s Length with len()</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'moose'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>spam<span class="token punctuation">)</span>
+<span class="token number">3</span>
+</code></pre>
+<h3 id="changing-values-in-a-list-with-indexes">Changing Values in a List with Indexes</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'aardvark'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'aardvark'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> spam<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'aardvark'</span><span class="token punctuation">,</span> <span class="token string">'aardvark'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">12345</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'aardvark'</span><span class="token punctuation">,</span> <span class="token string">'aardvark'</span><span class="token punctuation">,</span> <span class="token number">12345</span><span class="token punctuation">]</span>
+</code></pre>
+<h3 id="list-concatenation-and-list-replication">List Concatenation and List Replication</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'X'</span><span class="token punctuation">,</span> <span class="token string">'Y'</span><span class="token punctuation">,</span> <span class="token string">'Z'</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">3</span>
+<span class="token punctuation">[</span><span class="token string">'X'</span><span class="token punctuation">,</span> <span class="token string">'Y'</span><span class="token punctuation">,</span> <span class="token string">'Z'</span><span class="token punctuation">,</span> <span class="token string">'X'</span><span class="token punctuation">,</span> <span class="token string">'Y'</span><span class="token punctuation">,</span> <span class="token string">'Z'</span><span class="token punctuation">,</span> <span class="token string">'X'</span><span class="token punctuation">,</span> <span class="token string">'Y'</span><span class="token punctuation">,</span> <span class="token string">'Z'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> spam <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">]</span>
+</code></pre>
+<h3 id="removing-values-from-lists-with-del-statements">Removing Values from Lists with del Statements</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">del</span> spam<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">del</span> spam<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">]</span>
+</code></pre>
+<h3 id="working-with-lists">Working with Lists</h3>
+<ul>
+<li>Rather than create a new variable for many values, it is often more effective to use a list to store values</li>
+<li>Imagine the following inneficient program:</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Enter the name of cat 1:'</span><span class="token punctuation">)</span>
+catName1 <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Enter the name of cat 2:'</span><span class="token punctuation">)</span>
+catName2 <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Enter the name of cat 3:'</span><span class="token punctuation">)</span>
+catName3 <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Enter the name of cat 4:'</span><span class="token punctuation">)</span>
+catName4 <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Enter the name of cat 5:'</span><span class="token punctuation">)</span>
+catName5 <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Enter the name of cat 6:'</span><span class="token punctuation">)</span>
+catName6 <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The cat names are:'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>catName1 <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> catName2 <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> catName3 <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> catName4 <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>
+catName5 <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> catName6<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>We can very easily improve the efficiency of this program by using lists:</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python">catNames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Enter the name of cat '</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>catNames<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+      <span class="token string">' (Or enter nothing to stop.):'</span><span class="token punctuation">)</span>
+    name <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> name <span class="token operator">==</span> <span class="token string">''</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    catNames <span class="token operator">=</span> catNames <span class="token operator">+</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token comment"># list concatenation</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The cat names are:'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> name <span class="token keyword">in</span> catNames<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'  '</span> <span class="token operator">+</span> name<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="using-for-loops-with-lists">Using for Loops with Lists</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>0
+1
+2
+3
+</code></pre>
+<ul>
+<li>A common Python technique is to use <code>range(len(someList))</code> with a for loop to iterate over the indexes of a list</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python">supplies <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'pens'</span><span class="token punctuation">,</span> <span class="token string">'staplers'</span><span class="token punctuation">,</span> <span class="token string">'flame-throwers'</span><span class="token punctuation">,</span> <span class="token string">'binders'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>supplies<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Index '</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' in supplies is: '</span> <span class="token operator">+</span> supplies<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Index 0 in supplies is: pens
+Index 1 in supplies is: staplers
+Index 2 in supplies is: flame-throwers
+Index 3 in supplies is: binders
+</code></pre>
+<h3 id="the-in-and-not-in-operators">The in and not in Operators</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'howdy'</span> <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token string">'hi'</span><span class="token punctuation">,</span> <span class="token string">'howdy'</span><span class="token punctuation">,</span> <span class="token string">'heyas'</span><span class="token punctuation">]</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token string">'hi'</span><span class="token punctuation">,</span> <span class="token string">'howdy'</span><span class="token punctuation">,</span> <span class="token string">'heyas'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'cat'</span> <span class="token keyword">in</span> spam
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'howdy'</span> <span class="token operator">not</span> <span class="token keyword">in</span> spam
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span><span class="token string">'cat'</span> <span class="token operator">not</span> <span class="token keyword">in</span> spam
+<span class="token boolean">True</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python">myPets <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Zophie'</span><span class="token punctuation">,</span> <span class="token string">'Pooka'</span><span class="token punctuation">,</span> <span class="token string">'Fat-tail'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Enter a pet name:'</span><span class="token punctuation">)</span>
+name <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> name <span class="token operator">not</span> <span class="token keyword">in</span> myPets<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'I do not have a pet named '</span> <span class="token operator">+</span> name<span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">' is my pet.'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Enter a pet name:
+Footfoot
+I do not have a pet named Footfoot
+</code></pre>
+<h3 id="the-multiple-assignment-trick">The Multiple Assignment Trick</h3>
+<ul>
+<li>Instead of doing:</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'fat'</span><span class="token punctuation">,</span> <span class="token string">'orange'</span><span class="token punctuation">,</span> <span class="token string">'loud'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> size <span class="token operator">=</span> cat<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> color <span class="token operator">=</span> cat<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> disposition <span class="token operator">=</span> cat<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>You could do this:</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'fat'</span><span class="token punctuation">,</span> <span class="token string">'orange'</span><span class="token punctuation">,</span> <span class="token string">'loud'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> size<span class="token punctuation">,</span> color<span class="token punctuation">,</span> disposition <span class="token operator">=</span> cat
+</code></pre>
+<ul>
+<li>Note: The number of variables and the length of the list must be exactly equal or Python will return a <code>ValueError</code>:</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'fat'</span><span class="token punctuation">,</span> <span class="token string">'orange'</span><span class="token punctuation">,</span> <span class="token string">'loud'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> size<span class="token punctuation">,</span> color<span class="token punctuation">,</span> disposition<span class="token punctuation">,</span> name <span class="token operator">=</span> cat
+</code></pre>
+<pre><code>Traceback (most recent call last):
+  File "&lt;pyshell#84&gt;", line 1, in &lt;module&gt;
+    size, color, disposition, name = cat
+ValueError: need more than 3 values to unpack
+</code></pre>
+<ul>
+<li>The multiple assignment trick can also be used to swap the values in two variables:</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a<span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token string">'Alice'</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token string">'Bob'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token string">'Alice'</span>
+</code></pre>
+<h3 id="augmented-assignment-operators">Augmented Assignment Operators</h3>
+<ul>
+<li><strong>Augmented asignment operators</strong> are a shortcut:</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token number">42</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">+=</span> <span class="token number">1</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token number">43</span>
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Augmented assignment statement</th>
+<th>Equivalent assignment statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spam += 1</code></td>
+<td><code>spam = spam + 1</code></td>
+</tr>
+<tr>
+<td><code>spam -= 1</code></td>
+<td><code>spam = spam - 1</code></td>
+</tr>
+<tr>
+<td><code>spam *= 1</code></td>
+<td><code>spam = spam * 1</code></td>
+</tr>
+<tr>
+<td><code>spam /= 1</code></td>
+<td><code>spam = spam / 1</code></td>
+</tr>
+<tr>
+<td><code>spam %= 1</code></td>
+<td><code>spam = spam % 1</code></td>
+</tr>
+</tbody>
+</table><ul>
+<li>The <code>+=</code> and <code>*=</code> operators can also work on strings and lists for concatenation and replication</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token string">'Hello'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">+=</span> <span class="token string">' world!'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token string">'Hello world!'</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> bacon <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Zophie'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> bacon <span class="token operator">*=</span> <span class="token number">3</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> bacon
+<span class="token punctuation">[</span><span class="token string">'Zophie'</span><span class="token punctuation">,</span> <span class="token string">'Zophie'</span><span class="token punctuation">,</span> <span class="token string">'Zophie'</span><span class="token punctuation">]</span>
+</code></pre>
+<h3 id="methods">Methods</h3>
+<ul>
+<li>A <strong>method</strong> is the same thing as a function, except it is “called on” a value</li>
+</ul>
+<h3 id="finding-a-value-in-a-list-with-the-index-method">Finding a Value in a List with the index() Method</h3>
+<ul>
+<li>List values hvae an <code>index()</code> method that can be passed a value, and if that value exists in the list, the index of the value is returned.</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token string">'hi'</span><span class="token punctuation">,</span> <span class="token string">'howdy'</span><span class="token punctuation">,</span> <span class="token string">'heyas'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+<span class="token number">0</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">'heyas'</span><span class="token punctuation">)</span>
+<span class="token number">3</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">'howdy howdy howdy'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Traceback (most recent call last):
+  File "&lt;pyshell#31&gt;", line 1, in &lt;module&gt;
+    spam.index('howdy howdy howdy')
+ValueError: 'howdy howdy howdy' is not in list
+</code></pre>
+<ul>
+<li>When there are duplicates of the value in the list, the index of its first appearance is returned</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Zophie'</span><span class="token punctuation">,</span> <span class="token string">'Pooka'</span><span class="token punctuation">,</span> <span class="token string">'Fat-tail'</span><span class="token punctuation">,</span> <span class="token string">'Pooka'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">'Pooka'</span><span class="token punctuation">)</span>
+<span class="token number">1</span>
+</code></pre>
+<h3 id="adding-values-to-lists-with-the-append-and-insert-methods">Adding Values to Lists with the append() and insert() Methods</h3>
+<ul>
+<li>To add new values to a list, use the <code>append()</code> and  <code>insert()</code> methods</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'moose'</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'moose'</span><span class="token punctuation">]</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'chicken'</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'chicken'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>Notice that the list is edited in place</li>
+<li>Read more about this in <a href="https://automatetheboringstuff.com/chapter4/#calibre_link-125">Mutable and Immutable Data Types</a></li>
+<li>These methods can only be called on list values</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> eggs <span class="token operator">=</span> <span class="token string">'hello'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> eggs<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'world'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Traceback (most recent call last):
+  File "&lt;pyshell#19&gt;", line 1, in &lt;module&gt;
+    eggs.append('world')
+AttributeError: 'str' object has no attribute 'append'
+</code></pre>
+<h3 id="removing-values-from-lists-with-remove">Removing Values from Lists with remove()</h3>
+<ul>
+<li>The <code>remove()</code> method is passed the value to be removed from the list it is called on</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>spam<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'bat'</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>Attempting to delete a <code>value</code> that does not exist in the list will result in a ValueError error</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'elephant'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'chicken'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Traceback (most recent call last):
+  File "&lt;pyshell#11&gt;", line 1, in &lt;module&gt;
+    spam.remove('chicken')
+ValueError: list.remove(x): x not in list
+</code></pre>
+<ul>
+<li>If the value appears multiple times in the list, only the first instance of the value will be removed.</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'hat'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'cat'</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'bat'</span><span class="token punctuation">,</span> <span class="token string">'rat'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'hat'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">]</span>
+</code></pre>
+<h3 id="sorting-the-values-in-a-list-with-the-sort-method">Sorting the Values in a List with the sort() Method</h3>
+<ul>
+<li>Lists of number values or lists of strings can be sorted with the <code>sort()</code> method</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3.14</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3.14</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'ants'</span><span class="token punctuation">,</span> <span class="token string">'cats'</span><span class="token punctuation">,</span> <span class="token string">'dogs'</span><span class="token punctuation">,</span> <span class="token string">'badgers'</span><span class="token punctuation">,</span> <span class="token string">'elephants'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'ants'</span><span class="token punctuation">,</span> <span class="token string">'badgers'</span><span class="token punctuation">,</span> <span class="token string">'cats'</span><span class="token punctuation">,</span> <span class="token string">'dogs'</span><span class="token punctuation">,</span> <span class="token string">'elephants'</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>You can also pass <code>True</code> for the <code>reverse</code> keyword argument to have <code>sort()</code> sort the values in reverse order</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'elephants'</span><span class="token punctuation">,</span> <span class="token string">'dogs'</span><span class="token punctuation">,</span> <span class="token string">'cats'</span><span class="token punctuation">,</span> <span class="token string">'badgers'</span><span class="token punctuation">,</span> <span class="token string">'ants'</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>You cannot sort lists that have both number values and string values in them</li>
+<li><code>sort()</code> uses “ASCIIbetical order” rather than actual alphabetical order for sorting strings. This means uppercase letters come before lowercase letters</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Alice'</span><span class="token punctuation">,</span> <span class="token string">'ants'</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'badgers'</span><span class="token punctuation">,</span> <span class="token string">'Carol'</span><span class="token punctuation">,</span> <span class="token string">'cats'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'Alice'</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Carol'</span><span class="token punctuation">,</span> <span class="token string">'ants'</span><span class="token punctuation">,</span> <span class="token string">'badgers'</span><span class="token punctuation">,</span> <span class="token string">'cats'</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>If you need to sort the values in regular alphabetical order, pass str. lower for the key keyword argument in the sort() method call</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'z'</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'Z'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key<span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">.</span>lower<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'z'</span><span class="token punctuation">,</span> <span class="token string">'Z'</span><span class="token punctuation">]</span>
+</code></pre>
+<h3 id="tuples">Tuples</h3>
+<ul>
+<li>Previously mentioned immutable vs. mutable data types are important for <a href="https://automatetheboringstuff.com/chapter4/#calibre_link-128">Passing References</a></li>
+<li>An immutable form of the list data type is the <strong>Tuple</strong></li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> eggs <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> eggs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token string">'hello'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> eggs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>eggs<span class="token punctuation">)</span>
+<span class="token number">3</span>
+</code></pre>
+<ul>
+<li>Tuples are immutable, they cannot have their values modified, appended, or removed</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> eggs <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> eggs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">99</span>
+</code></pre>
+<pre><code>Traceback (most recent call last):
+  File "&lt;pyshell#5&gt;", line 1, in &lt;module&gt;
+    eggs[1] = 99
+TypeError: 'tuple' object does not support item assignment
+</code></pre>
+<ul>
+<li>If you have only one value in your tuple, you can indicate this by placing a trailing comma after the value inside the parentheses
+<ul>
+<li>If you don’t do this, Python will think you’ve just typed a value inside regular parentheses</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'tuple'</span><span class="token operator">&gt;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">&gt;</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span><span class="token builtin">tuple</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'h'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'l'</span><span class="token punctuation">,</span> <span class="token string">'l'</span><span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">]</span>
+</code></pre>
+<h3 id="references">References</h3>
+<ul>
+<li>When you assign a list to a variable, you are actually assigning a list <strong>reference</strong> to the variable</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cheese <span class="token operator">=</span> spam
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cheese<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Hello!'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'Hello!'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cheese
+<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'Hello!'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>The cheese and spam lists have changed</li>
+<li>When the list is created, a reference is assigned to it in the spam variable</li>
+<li>The next line copied only the reference in spam to cheese, not the list value itself</li>
+<li>This means values stored in spam and cheese both refer to the same list</li>
+<li>Use <code>copy()</code> or <code>deepcopy()</code> to get make a copy of the list</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> copy
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cheese <span class="token operator">=</span> copy<span class="token punctuation">.</span>copy<span class="token punctuation">(</span>spam<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cheese<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">42</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cheese
+<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">]</span>
+</code></pre>
+</div>
+</body>
+
+</html>

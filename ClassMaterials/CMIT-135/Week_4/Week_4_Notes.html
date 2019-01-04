@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week_4_Notes</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="week-4">Week 4</h1>
+<h2 id="overview">Overview</h2>
+<p>In Week 4, we will be exploring two very disparate topics:</p>
+<ul>
+<li>How to write “loops” in Python. Basically, how do you write a program that repeats a repetitive task multiple times?</li>
+<li>How characters are implemented in computers. In particular, we will look at two character sets in detail, ASCII and Unicode.</li>
+</ul>
+<p>The section on Unicode can get quite dense. Follow along as best as you can. You do not need to become a master of the features of Unicode, but you do need a general sense of how it works.</p>
+<h3 id="objectives">Objectives</h3>
+<p>By the end of this week, you should be able to:</p>
+<ul>
+<li>Write programs that use While and For loops</li>
+<li>Understand how the ASCII character set works</li>
+<li>Have a general sense of how Unicode works as well as the popular UTF-8 encoding</li>
+<li>Be able to convert from a character to the ASCII value of that character in Python</li>
+</ul>
+<h3 id="readings--resources">Readings &amp; Resources</h3>
+<p>All of the readings are in Canvas.</p>
+<h3 id="activities--assignments">Activities &amp; Assignments</h3>
+<ul>
+<li>Week 4: Help your Neighbor (and Group programming challenge) - Not Graded</li>
+<li>Week 4: Discussion - Password security and Unicode</li>
+<li>Week 4: Self-Paced Assignment</li>
+<li>Week 4: Programming Assignment - Lists</li>
+<li>Midpoint Course Feedback Survey</li>
+</ul>
+<h2 id="lesson">Lesson</h2>
+<h3 id="flow-control---loops">Flow Control - Loops</h3>
+<ul>
+<li><code>while</code> clause will keep looping until condition is met</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python">spam <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> spam <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello, world.'</span><span class="token punctuation">)</span>
+    spam <span class="token operator">=</span> spam <span class="token operator">+</span> <span class="token number">1</span>
+</code></pre>
+<pre><code>Hello, world.
+Hello, world.
+Hello, world.
+Hello, world.
+Hello, world.
+</code></pre>
+<h4 id="break-statements">break Statements</h4>
+<ul>
+<li>If the execution in a <code>while</code> loop reaches <code>break</code>, it will immediately exit the loop</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>                         <span class="token comment"># (1)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Please type your name.'</span><span class="token punctuation">)</span>
+    name <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>                  <span class="token comment"># (2)</span>
+    <span class="token keyword">if</span> name <span class="token operator">==</span> <span class="token string">'your name'</span><span class="token punctuation">:</span>         <span class="token comment"># (3)</span>
+        <span class="token keyword">break</span>                       <span class="token comment"># (4)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Thank you!'</span><span class="token punctuation">)</span>                 <span class="token comment"># (5)</span>
+</code></pre>
+<h3 id="for-loops-and-the-range-function">for Loops and the range() Function</h3>
+<ul>
+<li><code>for</code> loop only loops certain number of times</li>
+<li><code>range(x)</code> returns the range from 0 up to, but not including, some number, x</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'My name is'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Jimmy Five Times ('</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">')'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>My name is
+Jimmy Five Times (0)
+Jimmy Five Times (1)
+Jimmy Five Times (2)
+Jimmy Five Times (3)
+Jimmy Five Times (4)
+</code></pre>
+<ul>
+<li>The <code>range()</code> function can also take two numbers such as <code>range(x1,x2)</code> and the range will go from <code>x1</code> up to, but not including, <code>x2</code></li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>12
+13
+14
+15
+</code></pre>
+<ul>
+<li>The <code>range()</code> function can also take 3 numbers such as <code>range(x1,x2,step)</code>. In this case, the range will go from <code>x1</code> up to, but not including, <code>x2</code>, increasing by increments of <code>step</code></li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>0
+2
+4
+6
+8
+</code></pre>
+<ul>
+<li><code>range()</code> can also count down</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>5
+4
+3
+2
+1
+0
+</code></pre>
+<h3 id="importing-modules">Importing Modules</h3>
+<ul>
+<li>Basic functions like <code>print()</code>, <code>input()</code>, and <code>len()</code> are part of Python standard library</li>
+<li>To use functions in other modules you must import them using <code>import</code> statement</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> random
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>4
+1
+8
+4
+1
+</code></pre>
+<ul>
+<li>You can also import many modules at once</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> random<span class="token punctuation">,</span> sys<span class="token punctuation">,</span> os<span class="token punctuation">,</span> math
+</code></pre>
+<h3 id="intro-to-ascii">Intro to ASCII</h3>
+<ul>
+<li>The American National Standards Institute (ANSI) published an agreement on numbers to represent different characters in computers</li>
+<li>You can use Python function <code>ord</code> to find numerical representation of any simple</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'*'</span><span class="token punctuation">)</span>
+<span class="token number">42</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'9'</span><span class="token punctuation">)</span>
+<span class="token number">57</span>
+</code></pre>
+<ul>
+<li>Each character in ASCII can be represented by 7 bits</li>
+<li>With 7 bits ASCII can only represent 128 different symbols</li>
+<li>Therefore, it really only works for English</li>
+</ul>
+<h3 id="unicode">UNICODE</h3>
+<ul>
+<li>To address ASCII only working for English the International STandards Organization (ISO) eventually devised a system called <strong>Unicode</strong></li>
+<li>It can represent every character in every known language, with room for future growth</li>
+<li>Because Unicode is somewhat wasteful of space for English documents, ISO also defined several “Unicode Transformaiton Formats” (UTF), the most popular of which is <strong>UTF-8</strong></li>
+</ul>
+<p><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sqPTR_v4qFA" allowfullscreen=""></iframe>
+<p><strong>UNICODE Domain Phishing Attacks</strong></p>
+<p><a href="https://www.grahamcluley.com/chrome-firefox-opera-users-vulnerable-unicode-domain-phishing-attacks/">Chrome, Firefox, and Opera users vulnerable to Unicode domain phishing attacks</a></p>
+<h3 id="cryptography">Cryptography</h3>
+<ul>
+<li>The science of writing secret codes is called <strong>cryptography</strong></li>
+<li>A secret code system is called a <strong>cipher</strong></li>
+<li>In cryptography, the message that we want to be secret is called <strong>plaintext</strong></li>
+</ul>
+<p>For example, the message could be:</p>
+<p><code>Hello there! The keys to the house are hidden under the flower pot.</code></p>
+<ul>
+<li>If we convert this plaintext into the encoded message we call it <strong>encrypting</strong> the plaintext</li>
+<li>The plaintext is encrypted into the <strong>ciphertext</strong></li>
+<li>If you know the cipher used to encrypt the message, you can <strong>decrypt</strong> the ciphertext back to the plaintext</li>
+<li>Many ciphers also use <strong>keys</strong> which are secret values that let you decrypt ciphertext that was encrypted using a specific cipher</li>
+</ul>
+<p>For more info in writing cryptography in Python see:</p>
+<p><a href="http://inventwithpython.com/hacking">Hacking Secret Ciphers with Python</a></p>
+<h3 id="the-caesar-cipher">The Caesar Cipher</h3>
+<ul>
+<li>Key for caesar cipher will be a number form 1 to 26</li>
+<li><strong>Caesar Cipher</strong> was one of the earliest ciphers ever invented</li>
+<li>In this cipher you encrypt a message by taking each letter (called symbols in cryptography) in the message and replacing it with a “shifted” letter</li>
+</ul>
+<img src="letter_shift.PNG" height="50%" width="50%">
+<h3 id="ascii-and-using-numbers-for-letters">ASCII, and Using Numbers for Letters</h3>
+<ul>
+<li>To implement the shifting of these symbols in code, we can represent each letter as a number called an <strong>ordinal</strong></li>
+<li>If you use ASCII you can to this easily</li>
+<li>With ASCII to shift “A” by three spaces, you:
+<ul>
+<li>Convert “A” to an ordinal (65).</li>
+<li>Add 3 to 65, to get 68.</li>
+<li>Convert the ordinal 68 back to a letter (“D”).</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-chr-and-ord-functions">The chr() and ord() Functions</h3>
+<ul>
+<li>The <code>chr()</code> function takes an integer ordinal and returns a single-character string</li>
+<li>The <code>ord()</code> function takes a single character string, and returns the integer ordinal value</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token number">65</span><span class="token punctuation">)</span>
+<span class="token string">'A'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span>
+<span class="token number">65</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token number">65</span><span class="token operator">+</span><span class="token number">8</span><span class="token punctuation">)</span>
+<span class="token string">'I'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token number">52</span><span class="token punctuation">)</span>
+<span class="token string">'4'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'F'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token string">'F'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token number">68</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">68</span>
+</code></pre>
+<h3 id="code-for-caesar-cipher-in-python">Code for Caesar Cipher in Python</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment">#Caesar Cypher Encryption</span>
+
+<span class="token comment">#Get the message to encrypt from the user</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Enter your message:'</span><span class="token punctuation">)</span>
+unencryptedMessage <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#Get the encryption key from the user.  Note the error handling to make sure we have a number from 1-26</span>
+key<span class="token operator">=</span><span class="token number">0</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>key <span class="token operator">&lt;</span> <span class="token number">1</span> <span class="token operator">or</span> key <span class="token operator">&gt;</span> <span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Enter the key number (1-26)'</span><span class="token punctuation">)</span>
+    key <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The key is '</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">#We will start with an empty string as our encryptedMessage</span>
+encryptedMessage <span class="token operator">=</span> <span class="token string">''</span>
+
+<span class="token comment">#For each symbol in the unencryptedMessage we will add an encrypted symbol into the encryptedMessage</span>
+<span class="token keyword">for</span> symbol <span class="token keyword">in</span> unencryptedMessage<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> symbol<span class="token punctuation">.</span>isalpha<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        num <span class="token operator">=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>symbol<span class="token punctuation">)</span>
+        num <span class="token operator">+=</span> key
+
+        <span class="token keyword">if</span> symbol<span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> num <span class="token operator">&gt;</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'Z'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                num <span class="token operator">-=</span> <span class="token number">26</span>
+            <span class="token keyword">elif</span> num <span class="token operator">&lt;</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                num <span class="token operator">+=</span> <span class="token number">26</span>
+        <span class="token keyword">elif</span> symbol<span class="token punctuation">.</span>islower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> num <span class="token operator">&gt;</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                num <span class="token operator">-=</span> <span class="token number">26</span>
+            <span class="token keyword">elif</span> num <span class="token operator">&lt;</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                num <span class="token operator">+=</span> <span class="token number">26</span>
+
+        encryptedMessage <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        encryptedMessage <span class="token operator">+=</span> symbol
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Your encrypted message is:"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>encryptedMessage<span class="token punctuation">)</span>
+</code></pre>
+<p><strong>Example Run</strong>:</p>
+<pre><code>Enter your message:
+The wolves are coming!
+Enter the key number (1-26)
+4
+The key is 4
+Your encrypted message is:
+Xli aspziw evi gsqmrk!
+</code></pre>
+<h3 id="isalpha-string-method">isalpha() String Method</h3>
+<ul>
+<li><code>isalpha()</code> string method will return <code>True</code> if the string is an uppercase or lowercase letter form A to Z</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>isalpha<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Forty two'</span><span class="token punctuation">.</span>isalpha<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Fortytwo'</span><span class="token punctuation">.</span>isalpha<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'42'</span><span class="token punctuation">.</span>isalpha<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">''</span><span class="token punctuation">.</span>isalpha<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+</code></pre>
+<h3 id="isupper-islower-string-methods">isupper() islower() String Methods</h3>
+<ul>
+<li><code>isupper()</code> and <code>islower()</code> string methods will return <code>True</code> if string contains at least one uppercase letter, or one lowercase letter, respectively</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'HELLO'</span><span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'hello'</span><span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'hello'</span><span class="token punctuation">.</span>islower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>islower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'LOOK OUT BEHIND YOU!'</span><span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'42'</span><span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'42'</span><span class="token punctuation">.</span>islower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">''</span><span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">''</span><span class="token punctuation">.</span>islower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+</code></pre>
+<h3 id="brute-force">Brute Force</h3>
+<ul>
+<li>Decrypting this message by brute force would only take 26 tries</li>
+<li>Consider the situation below where each possible key is tried</li>
+</ul>
+<pre><code>Lwcjba uig vwb jm xtmiaivb, jcb kmzbiqvbg qa ijaczl.
+
+Your translated text is:
+1 Kvbiaz thf uva il wslhzhua, iba jlyahpuaf pz hizbyk.
+2 Juahzy sge tuz hk vrkgygtz, haz ikxzgotze oy ghyaxj.
+3 Itzgyx rfd sty gj uqjfxfsy, gzy hjwyfnsyd nx fgxzwi.
+4 Hsyfxw qec rsx fi tpiewerx, fyx givxemrxc mw efwyvh.
+5 Grxewv pdb qrw eh sohdvdqw, exw fhuwdlqwb lv devxug.
+6 Fqwdvu oca pqv dg rngcucpv, dwv egtvckpva ku cduwtf.
+7 Epvcut nbz opu cf qmfbtbou, cvu dfsubjouz jt bctvse.
+8 Doubts may not be pleasant, but certainty is absurd.
+9 Cntasr lzx mns ad okdzrzms, ats bdqszhmsx hr zartqc.
+10 Bmszrq kyw lmr zc njcyqylr, zsr acpryglrw gq yzqspb.
+11 Alryqp jxv klq yb mibxpxkq, yrq zboqxfkqv fp xyproa.
+12 Zkqxpo iwu jkp xa lhawowjp, xqp yanpwejpu eo wxoqnz.
+13 Yjpwon hvt ijo wz kgzvnvio, wpo xzmovdiot dn vwnpmy.
+14 Xiovnm gus hin vy jfyumuhn, von wylnuchns cm uvmolx.
+15 Whnuml ftr ghm ux iextltgm, unm vxkmtbgmr bl tulnkw.
+16 Vgmtlk esq fgl tw hdwsksfl, tml uwjlsaflq ak stkmjv.
+17 Uflskj drp efk sv gcvrjrek, slk tvikrzekp zj rsjliu.
+18 Tekrji cqo dej ru fbuqiqdj, rkj suhjqydjo yi qrikht.
+19 Sdjqih bpn cdi qt eatphpci, qji rtgipxcin xh pqhjgs.
+20 Rciphg aom bch ps dzsogobh, pih qsfhowbhm wg opgifr.
+21 Qbhogf znl abg or cyrnfnag, ohg pregnvagl vf nofheq.
+22 Pagnfe ymk zaf nq bxqmemzf, ngf oqdfmuzfk ue mnegdp.
+23 Ozfmed xlj yze mp awpldlye, mfe npceltyej td lmdfco.
+24 Nyeldc wki xyd lo zvokckxd, led mobdksxdi sc klcebn.
+25 Mxdkcb vjh wxc kn yunjbjwc, kdc lnacjrwch rb jkbdam.
+26 Lwcjba uig vwb jm xtmiaivb, jcb kmzbiqvbg qa ijaczl.
+</code></pre>
+<ul>
+<li>We can see that 8 was probably the correct key because the sentence makes sense</li>
+</ul>
+</div>
+</body>
+
+</html>

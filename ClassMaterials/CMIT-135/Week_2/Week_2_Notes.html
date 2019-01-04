@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week_2_Notes</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="week-2">Week 2</h1>
+<h2 id="overview">Overview</h2>
+<h3 id="objectives">Objectives</h3>
+<p>By the end of this week, you should be able to:</p>
+<ul>
+<li>Write simple Python programs</li>
+<li>Convert back and forth between binary and base10 integers.</li>
+<li>Be able to add binary numbers.</li>
+<li>Convert back and forth between hexadecimal and integers.</li>
+<li>Understand and be able to use RGB colors.</li>
+</ul>
+<h3 id="readings--resources">Readings &amp; Resources</h3>
+<ul>
+<li>All of the readings are in the module for the week. The lectures are interactive, make sure you complete the hands-on exercises inside the lectures.</li>
+</ul>
+<h3 id="activities--assignments">Activities &amp; Assignments</h3>
+<ol>
+<li>Self-Paced exercises in PyCharm - The best way to learn is by doing!  In that spirit, this class is designed to give you lots of practice instead of lots of reading.  The self-paced activities are not graded, but don’t skip them! They are essential if you are going to be able to complete the assignments.  Each week you will find a discussion forum where you can post questions and insights from these activities. You will find the self-paced programming exercises as part of PyCharm.</li>
+<li>Complete the discussion started last week, “How high can you count on five fingers?”</li>
+<li>Programming Project: “Conversation with a computer”</li>
+<li>Quic on hexadecimal and binary numbers</li>
+</ol>
+<h2 id="lesson">Lesson</h2>
+<h3 id="python-introduction">Python Introduction</h3>
+<blockquote>
+<p><em>“A computer is like a Swiss Army knife that you can configure for countless tasks. Many people spend hours clicking and typing to perform repetitive tasks, unaware that the machine they’re using could do their job in seconds if they gave it the right instructions.”</em></p>
+</blockquote>
+<ul>
+<li><strong>Programming</strong> - the act of entering instructions for the computer to perform</li>
+</ul>
+<h3 id="python-basics">Python Basics</h3>
+<ul>
+<li><strong>Expression</strong> - The most basic kind of programming instruction in the language</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># A simple expression</span>
+<span class="token number">2</span> <span class="token operator">+</span> <span class="token number">2</span>
+</code></pre>
+<ul>
+<li>Expressions consis of <strong>values</strong> (such as <code>2</code>) and <strong>operators</strong> (such as <code>+</code>)</li>
+<li>They can always <strong>evaluate</strong> (reduce) down to a single value</li>
+<li>In the previous example <code>2 + 2</code> is evaluated down to a single value, <code>4</code></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Operation</th>
+<th>Example</th>
+<th>Evaluates to…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>**</code></td>
+<td>Exponent</td>
+<td><code>2**3</code></td>
+<td><code>8</code></td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Modulus/remainder</td>
+<td><code>22%8</code></td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td><code>//</code></td>
+<td>Integer division/floored quotient</td>
+<td><code>22//8</code></td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Division</td>
+<td><code>22/8</code></td>
+<td><code>2.75</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiplication</td>
+<td><code>3*5</code></td>
+<td><code>15</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Subtraction</td>
+<td><code>5-2</code></td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>Addition</td>
+<td><code>2+2</code></td>
+<td><code>4</code></td>
+</tr>
+</tbody>
+</table><p><strong>Test Question</strong>:</p>
+<p>If today was a Tuesday and you wanted to know what day of the week it would be 100 days from now, which operator would help?</p>
+<p><strong>Answer</strong>:</p>
+<p>Finding the remainder is really handy at solving problems like this. <code>100 % 7 = 2</code>. So if today was a Tuesday, then 100 days from now would be a Thursday since that is 2 days later in the week than a Tuesday.</p>
+<p><strong>Test Question</strong>:</p>
+<p>How many weeks will have passed 100 days from now?</p>
+<p><strong>Answer</strong>:</p>
+<p>Integer division can help solve this problem. <code>100 // 7 = 14</code>. So 14 full weeks will have passed 100 days from now (plus 2 additional days).</p>
+<ul>
+<li>The order of operations, called <strong>precedence</strong> of Python math operators:</li>
+</ul>
+<ol>
+<li><code>**</code></li>
+<li><code>*</code></li>
+<li><code>/</code></li>
+<li><code>//</code></li>
+<li><code>%</code></li>
+<li><code>+</code></li>
+<li><code>-</code></li>
+</ol>
+<pre><code>&gt;&gt;&gt; 2 + 3 * 6
+20
+&gt;&gt;&gt; (2 + 3) * 6
+30
+&gt;&gt;&gt; 48565878 * 578453
+28093077826734
+&gt;&gt;&gt; 2 ** 8
+256
+&gt;&gt;&gt; 23 / 7
+3.2857142857142856
+&gt;&gt;&gt; 23 // 7
+3
+&gt;&gt;&gt; 23 % 7
+2
+&gt;&gt;&gt; 2     +            2
+4
+&gt;&gt;&gt; (5 - 1) * ((7 + 1) / (3 - 1))
+16.0
+</code></pre>
+<ul>
+<li>Syntax error - Python can’t understand what you’re trying to ask it to do</li>
+</ul>
+<pre><code>&gt;&gt;&gt; 5 +
+  File "&lt;stdin&gt;", line 1
+    5 +
+      ^
+SyntaxError: invalid syntax
+&gt;&gt;&gt; 42 + 5 + * 2
+  File "&lt;stdin&gt;", line 1
+    42 + 5 + * 2
+             ^
+SyntaxError: invalid syntax
+</code></pre>
+<h3 id="the-integer-floating-point-and-string-data-types">The Integer, Floating-Point, and String Data Types</h3>
+<ul>
+<li>A <strong>Data Type</strong> is a category for values, and every value belongs to exactly one data type</li>
+</ul>
+<p><strong>Common Data Types</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integers</td>
+<td><code>2</code>,<code>-1</code>,<code>0</code>,<code>1</code>,<code>2</code>,<code>3</code>,<code>1042</code></td>
+</tr>
+<tr>
+<td>Floating-point numbers</td>
+<td><code>-1.25</code>,<code>-1.0</code>,<code>0.0</code>,<code>0.5</code>,<code>1.35442</code></td>
+</tr>
+<tr>
+<td>Strings</td>
+<td><code>a</code>,<code>aa</code>,<code>Hello World!</code>,<code>9</code></td>
+</tr>
+</tbody>
+</table><ul>
+<li><code>SyntaxError: EOL while scanning string literal</code> often happens when the final single quote character at the end of the string is missing</li>
+</ul>
+<pre><code>&gt;&gt;&gt; 'Hello world!
+SyntaxError: EOL while scanning string literal
+</code></pre>
+<h3 id="string-concatenation-and-replication">String Concatenation and Replication</h3>
+<ul>
+<li><code>+</code> adds to values together if they are <code>int</code> or <code>float</code>, but it is the <strong>concatenation</strong> operator</li>
+</ul>
+<pre><code>&gt;&gt;&gt; 'Alice' + 'Bob'
+'AliceBob'
+</code></pre>
+<pre><code>&gt;&gt;&gt; 'Alice' + 42
+Traceback (most recent call last):
+  File "&lt;pyshell#26&gt;", line 1, in &lt;module&gt;
+    'Alice' + 42
+TypeError: Can't convert 'int' object to str implicitly
+</code></pre>
+<ul>
+<li><code>*</code> is the multiplication operator with <code>int</code> or <code>float</code>, but with two strings it is a <strong>replication</strong> operator</li>
+</ul>
+<pre><code>&gt;&gt;&gt; 'Alice' * 5
+'AliceAliceAliceAliceAlice'
+</code></pre>
+<pre><code>&gt;&gt;&gt; 'Alice' * 'Bob'
+Traceback (most recent call last):
+  File "&lt;pyshell#32&gt;", line 1, in &lt;module&gt;
+    'Alice' * 'Bob'
+TypeError: can't multiply sequence by non-int of type 'str'
+&gt;&gt;&gt; 'Alice' * 5.0
+Traceback (most recent call last):
+  File "&lt;pyshell#33&gt;", line 1, in &lt;module&gt;
+    'Alice' * 5.0
+TypeError: can't multiply sequence by non-int of type 'float'
+</code></pre>
+<h3 id="storing-values-in-variables">Storing Values in Variables</h3>
+<ul>
+<li>A <strong>variable</strong> can store a single value</li>
+</ul>
+<h3 id="assignment-statements">Assignment Statements</h3>
+<ul>
+<li><strong>Assignment Statement</strong> - stores values in variables</li>
+<li><code>spam = 42</code> is an assignement statement</li>
+</ul>
+<pre><code>&gt;&gt;&gt; spam = 40
+&gt;&gt;&gt; spam
+40
+&gt;&gt;&gt; eggs = 2
+&gt;&gt;&gt; spam + eggs
+42
+&gt;&gt;&gt; spam + eggs + spam
+82
+&gt;&gt;&gt; spam = spam + 2
+&gt;&gt;&gt; spam
+42
+</code></pre>
+<ul>
+<li>When a variable is assigned to a new value the variable is <strong>overwritten</strong></li>
+</ul>
+<pre><code>&gt;&gt;&gt; spam = 'Hello'
+&gt;&gt;&gt; spam
+'Hello'
+&gt;&gt;&gt; spam = 'Goodbye'
+&gt;&gt;&gt; spam
+'Goodbye'
+
+</code></pre>
+<h3 id="variable-names">Variable Names</h3>
+<ul>
+<li>Variables can be named anything as long as they obey the following rules:</li>
+</ul>
+<ol>
+<li>
+<p>It can be only one word.</p>
+</li>
+<li>
+<p>It can use only letters, numbers, and the underscore, <code>_</code>, character.</p>
+</li>
+<li>
+<p>It can’t begin with a number.</p>
+</li>
+</ol>
+<p><strong>Valid and Invalid Variable Names</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Valid variable names</th>
+<th>Invalid variable names</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>balance</code></td>
+<td><code>current-balance</code> (hyphens are not allowed)</td>
+</tr>
+<tr>
+<td><code>currentBalance</code></td>
+<td><code>current balance</code> (spaces are not allowed)</td>
+</tr>
+<tr>
+<td><code>current_balance</code></td>
+<td><code>4account</code> (can’t begin with a number)</td>
+</tr>
+<tr>
+<td><code>_spam</code></td>
+<td><code>42</code> (can’t begin with a number)</td>
+</tr>
+<tr>
+<td><code>SPAM</code></td>
+<td><code>total_$um</code> (special characters like <code>$</code>)</td>
+</tr>
+<tr>
+<td><code>account4</code></td>
+<td><code>hello</code> (special characters like <code>'</code> are not allowed)</td>
+</tr>
+</tbody>
+</table><ul>
+<li>Variable names are case-sensative</li>
+</ul>
+<h3 id="your-first-program">Your First Program</h3>
+<ul>
+<li>See code in <code>Week_2_Code</code> folder in file <code>StartingOff.py</code></li>
+</ul>
+<h3 id="dissecting-your-program">Dissecting Your Program</h3>
+<p><strong>Comments</strong></p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># This program says hello and asks for my name</span>
+</code></pre>
+<p><strong>The <code>print()</code> function</strong></p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello world!'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'What is your name?'</span><span class="token punctuation">)</span> <span class="token comment"># ask for their name</span>
+</code></pre>
+<p><strong>The <code>input()</code> function</strong></p>
+<pre class=" language-python"><code class="prism  language-python">myName <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>The <code>len()</code> function</strong></p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The length of your name is:'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>myName<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>&gt;&gt;&gt; len('hello')
+5
+&gt;&gt;&gt; len('My very energetic monster just scarfed nachos.')
+46
+&gt;&gt;&gt;len('')
+0
+</code></pre>
+<p><strong>The <code>str()</code>, <code>int()</code>, and <code>float()</code> functions</strong></p>
+<pre><code>&gt;&gt;&gt; str(0)
+'0'
+&gt;&gt;&gt; str(-3.14)
+'-3.14'
+&gt;&gt;&gt; int('42')
+42
+&gt;&gt;&gt; int('-99')
+-99
+&gt;&gt;&gt; int(1.25)
+1
+&gt;&gt;&gt; int(1.99)
+1
+&gt;&gt;&gt; float('3.14')
+3.14
+&gt;&gt;&gt; float(10)
+10.0
+</code></pre>
+<h3 id="binary-numbers">Binary Numbers</h3>
+<h3 id="counting-in-binary">Counting in Binary</h3>
+<img src="base-counting.PNG" width="50%" height="50%">
+<h3 id="adding-in-binary">Adding in Binary</h3>
+<img src="adding_binary.PNG" width="50%" height="50%">
+<h3 id="binary-in-python">Binary in Python</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment">#Binary numbers in Python are always prepended with '0b'. </span>
+<span class="token comment">#So instead of writing 101 you would write 0b101</span>
+<span class="token comment">#0b101 is equal to 5</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The binary number 101 converts to:"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0b101</span><span class="token punctuation">)</span>
+
+<span class="token comment">#We can also add binary numbers</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"5 + 5 ="</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0b101</span> <span class="token operator">+</span> <span class="token number">0b101</span><span class="token punctuation">)</span>
+
+<span class="token comment">#or we can convert back and forth</span>
+numberOfDaysInWeek <span class="token operator">=</span> <span class="token number">0b111</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"There are "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>numberOfDaysInWeek<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" days in a week"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"And 7 in binary is "</span> <span class="token operator">+</span> <span class="token builtin">bin</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0b11111111</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0xff</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>The binary number 101 converts to:
+5
+5 + 5 =
+10
+There are 7 days in a week
+And 7 in binary is 0b111
+255
+255
+</code></pre>
+<h3 id="hexadecimal-system">Hexadecimal System</h3>
+<img src="hexadecimal.PNG" width="50%" height="50%">
+<h3 id="converting-between-hexadecimal-and-binary">Converting between Hexadecimal and Binary</h3>
+<img src="hexadecimal.PNG" width="50%" height="50%">
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment">#Hexadecimal numbers in Python are always prepended with '0x'. </span>
+<span class="token comment">#So instead of writing ff you would write 0xff</span>
+<span class="token comment">#0xff is equal to 255</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The hexadecimal number ff converts to:"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0xff</span><span class="token punctuation">)</span>
+
+<span class="token comment">#We can also add binary numbers</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"11 + 13 ="</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0xa</span> <span class="token operator">+</span> <span class="token number">0xc</span><span class="token punctuation">)</span>
+
+<span class="token comment">#or we can convert back and forth</span>
+numberOfDaysInYear <span class="token operator">=</span> <span class="token number">0x16d</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"There are "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>numberOfDaysInYear<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" days in a week"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"And 365 in hex is "</span> <span class="token operator">+</span> <span class="token builtin">hex</span><span class="token punctuation">(</span><span class="token number">365</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">#Convert 56 from decimal to hexadecimal</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0b10010</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>The hexadecimal number ff converts to:
+255
+11 + 13 =
+22
+There are 365 days in a week
+And 365 in hex is 0x16d
+18
+</code></pre>
+<h2 id="additional-resources">Additional Resources</h2>
+<p><a href="http://proquest.safaribooksonline.com.cobalt.champlain.edu/book/programming/python/9781449361167/2dot-py-ingredients-numbers-strings-and-variables/python_ingredients_html">Introducing Python Chapter 1</a> - A more detailed look at the same materials as this week’s programming lectures.</p>
+<p><a href="http://proquest.safaribooksonline.com.cobalt.champlain.edu/book/programming/python/9781491939406/1dot-the-way-of-the-program/a0000000591_html">Think Python Chapters 1 &amp; 2</a> - A different approach from a programming book.</p>
+<p><a href="https://www.codecademy.com/learn/python">CodeAcademy’s Python lesson</a> - CodeAcademy provides a pretty, hands-on interactive lesson.  It is a similar experience to the self-paced exercises in PyCharm.  Unit 1 &amp; 2 are the best fit for this week’s materials.</p>
+</div>
+</body>
+
+</html>

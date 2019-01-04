@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week_3_Notes.md</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="week-3">Week 3</h1>
+<h2 id="overview">Overview</h2>
+<p>The programs we wrote last week were fine for getting started, but they were inherently limited. This week we will extend our skills by learning how to write programs that utilize conditional logic to make decisions. We will also be looking deeper into algorithms.</p>
+<h3 id="objectives">Objectives</h3>
+<p>By the end of this week, you should be able to:</p>
+<ul>
+<li>Understand and use boolean operators</li>
+<li>Apply conditional logic in a Python program</li>
+</ul>
+<h3 id="readings--resources">Readings &amp; Resources</h3>
+<ul>
+<li>All of the readings are in the module for the week. The lectures are interactive, make sure you complete the hands-on exercises inside the lectures.</li>
+</ul>
+<h3 id="activities--assignments">Activities &amp; Assignments</h3>
+<ul>
+<li>Complete the Self-Paced activities in PyCharm. Try to do these early in the week, as it will give you time to ask questions.</li>
+<li>Week 3: Scripting Discussion. Your initial post is DUE WEDNESDAY NIGHT</li>
+<li>Complete the programming projects</li>
+</ul>
+<h2 id="lesson">Lesson</h2>
+<h3 id="flow-control-part-i">Flow Control Part I</h3>
+<p><a href="https://www.youtube.com/watch?v=4XA9CKJJbr4">Boolean Introduction Video</a></p>
+<h3 id="boolean-values">Boolean Values</h3>
+<ul>
+<li><strong>Boolean</strong> data types have only two values <code>True</code> and <code>False</code></li>
+</ul>
+<h3 id="comparison-operators">Comparison Operators</h3>
+<ul>
+<li><strong>Comparison Operators</strong> evaluate to a single boolean value</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td><code>Equal to</code></td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td><code>Not equal to</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td><code>Less than</code></td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td><code>Greater than</code></td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td><code>Less than or equal to</code></td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td><code>Greater than or equal to</code></td>
+</tr>
+</tbody>
+</table><h3 id="boolean-operators">Boolean Operators</h3>
+<ul>
+<li>The three boolean operators are <code>and</code>, <code>or</code>, and <code>not</code></li>
+<li>Use them to compare boolean values</li>
+<li>A truth table shows every possible result of a boolean operator</li>
+</ul>
+<p><strong>and operator</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Evaluates to…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True and True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True and False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False and True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False and False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table><p><strong>or operator</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Evaluates to…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True or True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True or False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False or True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False or False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table><p><strong>not operator</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Evaluates to…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>not True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>not False</td>
+<td>True</td>
+</tr>
+</tbody>
+</table><h3 id="flow-control-part-two">Flow Control Part Two</h3>
+<h3 id="elements-of-flow-control">Elements of Flow Control</h3>
+<p><strong>Conditions</strong></p>
+<ul>
+<li>A <strong>condition</strong> is a more specific name in the context of flow control statements</li>
+<li>A flow control statement decides what to do based on whether its condition is <code>True</code> or <code>False</code></li>
+</ul>
+<p><strong>Blocks of Code</strong></p>
+<ul>
+<li>Lines of Python code can be grouped together in <strong>blocks</strong></li>
+</ul>
+<ol>
+<li>Blocks begin when the indentation increases.</li>
+<li>Blocks can contain other blocks.</li>
+<li>Blocks end when the indentation decreases to zero or to a containing block’s indentation.</li>
+</ol>
+<p><strong>Example of a block</strong></p>
+<pre class=" language-python"><code class="prism  language-python">name <span class="token operator">=</span> <span class="token string">'Mary'</span>
+password <span class="token operator">=</span> <span class="token string">'swordfish'</span>
+<span class="token keyword">if</span> name <span class="token operator">==</span> <span class="token string">'Mary'</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello Mary'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> password <span class="token operator">==</span> <span class="token string">'swordfish'</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Access granted.'</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Wrong password.'</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="if-statements">if Statements</h3>
+<ul>
+<li><code>if</code> statement will execute if statement’s condition is <code>True</code></li>
+</ul>
+<h3 id="else-statements">else Statements</h3>
+<ul>
+<li><code>else</code> statement can optionally follow an <code>if</code> clause</li>
+</ul>
+<h3 id="elif-statements">elif Statements</h3>
+<ul>
+<li>Only one <code>if</code> or <code>else</code> clauses will execute, <code>elif</code> allows many possible clauses to execute</li>
+<li>The <code>elif</code> statements are executed in order, and once one of them is found to be <code>True</code>, the rest of the <code>elif</code> clauses are automatically skipped</li>
+</ul>
+<h3 id="binary-search">Binary Search</h3>
+<ul>
+<li>Let’s look a bit closer at the binary search algorithm from the first week</li>
+<li>Binary search is the fastest algorithm for an already sorted list</li>
+<li>The technique of cutting the search space in half each time will work for any list of items <strong>as long as that list is already sorted</strong></li>
+<li>Binary search is also especially efficient with larger number spaces for searching</li>
+<li>Simulation Linear vs. Binary search for finding a number in a list <a href="https://www.cs.usfca.edu/~galles/visualization/Search.html">https://www.cs.usfca.edu/~galles/visualization/Search.html</a></li>
+</ul>
+<h3 id="analyzin-the-speed-of-binary-search">Analyzin the Speed of Binary Search</h3>
+<ul>
+<li>
+<p>Binary search</p>
+<ul>
+<li>Every time we double the size of the array, we need at most one more guess</li>
+<li>Suppose we need at most <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathit">m</span></span></span></span></span> guesses for an array of length <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathit">n</span></span></span></span></span></li>
+<li>Then, for an array of length <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>∗</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2*n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathit">n</span></span></span></span></span>, the first guess cuts the reasonable portion of the array down to size <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathit">n</span></span></span></span></span></li>
+<li>At most <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathit">m</span></span></span></span></span> guesses finish up, giving us a total of at most <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.66666em; vertical-align: -0.08333em;"></span><span class="mord mathit">m</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">1</span></span></span></span></span> guesses</li>
+</ul>
+</li>
+<li>
+<p>We can express the number of guesses, in the worst case, as “the number of times we can repeatedly halve, starting at <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathit">n</span></span></span></span></span>, until we get the value 1, plus one”</p>
+</li>
+<li>
+<p>Mathematically this is <strong>the base-2 logarithm of n</strong></p>
+</li>
+<li>
+<p><span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi></mrow><annotation encoding="application/x-tex">log_2 n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.88888em; vertical-align: -0.19444em;"></span><span class="mord mathit" style="margin-right: 0.01968em;">l</span><span class="mord mathit">o</span><span class="mord"><span class="mord mathit" style="margin-right: 0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.301108em;"><span class="" style="top: -2.55em; margin-left: -0.03588em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mord mathit">n</span></span></span></span></span></p>
+</li>
+<li>
+<p>Review of logs <a href="https://www.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions/introduction-to-logarithms/v/logarithms">https://www.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions/introduction-to-logarithms/v/logarithms</a></p>
+</li>
+</ul>
+<img src="log_table.PNG" height="10%" width="10%">
+<p>Table as chart:</p>
+<img src="log_chart.PNG" height="50%" width="50%">
+<p>Table as chart zoomed:</p>
+<img src="log_chart_zoomed.PNG" height="50%" width="50%">
+<ul>
+<li>The logarithm function grows very slowly</li>
+<li>When n is not a power of 2, we can just go up to the next higher power of 2</li>
+<li>For an array whose length is 1000, the next higher power of 2 is 1024, which equals <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>1</mn></msup><mn>0</mn></mrow><annotation encoding="application/x-tex">2^10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.814108em; vertical-align: 0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span><span class="mord">0</span></span></span></span></span>
+<ul>
+<li>Therefore, for a 1000-element array, binary search would require at most 11 (10 + 1) guesses</li>
+</ul>
+</li>
+<li>Binary search is much faster than linear search (see below)</li>
+</ul>
+<img src="linear_vs_binary.PNG" height="50%" width="50%">
+<h2 id="additional-resources">Additional Resources</h2>
+<p><a href="http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/ifstatements.html">Conditional Expressions from the Hands on Python Tutorial</a></p>
+<p><a href="http://www.python-course.eu/python3_conditional_statements.php">Conditional Expressions from python-course.eu</a></p>
+</div>
+</body>
+
+</html>

@@ -119,6 +119,10 @@ text-decoration: inherit;
     text-align: center;
 }
 
+.project-row {
+    padding: 5px;
+}
+
 .project-row:last-child {
     border-top: 1px solid black;
     width: 240px;

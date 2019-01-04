@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week_1_Notes.md</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="week-1">Week 1</h1>
+<h2 id="overview">Overview</h2>
+<h3 id="objectives">Objectives</h3>
+<p>By the end of this week, you should be able to:</p>
+<ul>
+<li>Understand and be able to design simple algorithms</li>
+<li>Apply problem-solving techniques in algorithm design</li>
+<li>Have installed PyCharm (A tool for Python programming) on your local computer</li>
+</ul>
+<h3 id="readings--resources">Readings &amp; Resources</h3>
+<ul>
+<li>All of the readings are in the module for the week</li>
+</ul>
+<h3 id="activities--assignments">Activities &amp; Assignments</h3>
+<ol>
+<li>Introduce Yourself</li>
+<li>Discussion - Design your own Algorithm</li>
+<li>Maze Solving</li>
+<li>Thought Problem: “How high can you count on five fingers?”</li>
+<li>Install PyCharm</li>
+</ol>
+<h2 id="lesson">Lesson</h2>
+<h3 id="algorithms">Algorithms</h3>
+<ul>
+<li><strong>Algorithm</strong>: A finite set of instructions that specify a sequence of operations to be carried out in order to solve a specific problem or class of problems</li>
+<li>We judge an algorithm based on two criteria:
+<ul>
+<li>Correctness</li>
+<li>Efficiency</li>
+</ul>
+</li>
+<li>An algorithm is <em>not</em> a program - a <strong>program</strong> is the concrete expression of an algorithm in a particular programming language</li>
+<li>Guessing game - guess number between 1 and 16, with each guess you will be told high or low, what is the most efficient way to find the right number?
+<ul>
+<li><strong>Linear Search</strong> - Start from number one and work your way up one number at a time. Will find the right answer, but it is inneficient and slow. In worst case it could take 16 guesses to find right answer.</li>
+<li><strong>Binary Search</strong> - Guess the middle each time. Cuts the search space in half each time. At worst, it would take 5 guesses. This is the most efficient algorithm for this problem.</li>
+</ul>
+</li>
+</ul>
+<h3 id="algorithm-for-a-maze">Algorithm for a Maze</h3>
+<ul>
+<li>Let’s try to design an algorithm for a maze, that you could always follow to solve any maze.</li>
+</ul>
+<h3 id="maze-solution-1---the-random-approach">Maze Solution #1 - The Random Approach</h3>
+<p><strong>Random Walk Algorithm</strong></p>
+<ol>
+<li>Move forward until there is either a left or right turn or a dead end</li>
+<li>If there is a left or right rurn, choose a random direction</li>
+<li>If you are at a dead end turn around</li>
+</ol>
+<p><strong>Problem</strong>: Can take a very long time</p>
+<h3 id="maze-solution-2---follow-the-right-wall">Maze Solution #2 - Follow the right wall</h3>
+<p><strong>Follow Right Wall Algorithm</strong></p>
+<ol>
+<li>Go in a straight line until you encounter a junction or a dead-end</li>
+<li>At a junction, always go to rightmost option from where you are currently facing</li>
+<li>At a dead-end, turn around 180 degrees</li>
+</ol>
+<p><strong>Problem</strong>: May get stuck in some mazes, or Islands - correctness</p>
+<h3 id="maze-solution-3---tremauzs-algorithm">Maze Solution #3 - Tremauz’s Algorithm</h3>
+<p><strong>Tremaux’s Algorithm</strong></p>
+<ul>
+<li>Charles Pierre Tremaux invented an algorithm for colving mazes:</li>
+</ul>
+<ol>
+<li>As you walk down the maze, draw a line on the path</li>
+<li>At a dead end, turn around and walk back the way you came</li>
+<li>At a junction you’ve not seen before, take any new path</li>
+<li>At junction you have been to before:
+<ol>
+<li>If you are on a new path, turn back the way you came</li>
+<li>If you are on a path you’ve marked before, take a new path if you can</li>
+</ol>
+</li>
+<li>Never go down a path already marked with two lines</li>
+<li>When your path reaches a junction, you choose an exit</li>
+</ol>
+<h2 id="homework">Homework</h2>
+<h3 id="maze-solving-game">Maze Solving Game</h3>
+<ol>
+<li>Solved solution: <a href="https://blockly-games.appspot.com/maze?lang=en&amp;level=1&amp;skin=0#3m64bp">Link</a></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ol start="2">
+<li>Solved solution: <a href="https://blockly-games.appspot.com/maze?lang=en&amp;level=2&amp;skin=0#daume6">Link</a></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">turnLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">turnRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ol start="3">
+<li>Solved solution: <a href="https://blockly-games.appspot.com/maze?lang=en&amp;level=3&amp;skin=0#cmhyhx">Link</a></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">notDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol start="4">
+<li>Solved solution: <a href="https://blockly-games.appspot.com/maze?lang=en&amp;level=4&amp;skin=0#ci6g6f">Link</a></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">notDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">turnLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">turnRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol start="5">
+<li>Solved solution: <a href="https://blockly-games.appspot.com/maze?lang=en&amp;level=5&amp;skin=0#qaygga">Link</a></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">turnLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">notDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol start="6">
+<li>Solved solution: <a href="https://blockly-games.appspot.com/maze?lang=en&amp;level=6&amp;skin=0#86r6y7">Link</a></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">notDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPathLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">turnLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol start="7">
+<li>Solved solution: <a href="https://blockly-games.appspot.com/maze?lang=en&amp;level=7&amp;skin=0#kmfef5">Link</a></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">notDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPathForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPathRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">turnRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol start="8">
+<li>Solved solution: <a href="https://blockly-games.appspot.com/maze?lang=en&amp;level=8&amp;skin=0#zvdz2d">Link</a></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">notDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPathLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">turnLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPathRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">turnRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol start="9">
+<li>Solved solution: <a href="https://blockly-games.appspot.com/maze?lang=en&amp;level=9&amp;skin=0#szydsf">Link</a></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">notDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPathForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPathLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">turnLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">turnRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol start="10">
+<li>Solved solution: <a href="https://blockly-games.appspot.com/maze?lang=en&amp;level=10&amp;skin=0#wba7pd">Link</a></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">notDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPathForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPathRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">turnRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPathLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">turnLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPathLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">turnLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">turnRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">moveForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div>
+</body>
+
+</html>

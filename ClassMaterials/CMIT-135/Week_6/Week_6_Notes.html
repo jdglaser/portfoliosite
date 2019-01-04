@@ -1,0 +1,571 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week_6_Notes</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="week-6">Week 6</h1>
+<h2 id="overview">Overview</h2>
+<p>In week 6, we cover critical topics in computer science; computer architecture and functions.</p>
+<p>We will look at how functions are used in programs. Don’t let functions from high school math intimidate you. I think you will find that functions, in the context of computers, are much more intuitive than the abstract f(x) you learned in algebra.</p>
+<p>We will begin working on a larger password saver program. The final versions of both the program is due at the end of Week 7. You need to turn in a first draft at the end of this week. This is an opportunity for help getting past any stuck points.</p>
+<h2 id="objectives">Objectives</h2>
+<p>By the end of this week, you should be able to:</p>
+<ul>
+<li>Explain the role of registers in the CPU</li>
+<li>Explain the difference between big endian and little endian</li>
+<li>Be able to use functions in python programs</li>
+<li>Be able to manipulate strings in python programs</li>
+</ul>
+<h2 id="activities-and-assignments">Activities and Assignments</h2>
+<ul>
+<li>Week 6: Discussion - Understanding the Scott CPU</li>
+<li>Week 6: Self-Paced Assignment</li>
+<li>Week 6: First Draft - Password Saver</li>
+</ul>
+<h2 id="lesson">Lesson</h2>
+<h3 id="how-the-cpu-works">How the CPU Works</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cNN_tTXABUA" allowfullscreen=""></iframe>
+<h3 id="endianess">Endianess</h3>
+<ul>
+<li>Endianess describes the order of the bytes within the memory of the computer</li>
+<li>A computer can either be “Big Endian” or “Little Endian”</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JrNF0KRAlyo" allowfullscreen=""></iframe>
+<h3 id="functions">Functions</h3>
+<ul>
+<li>Python has build in functions like <code>print()</code>, <code>input()</code>, and <code>len()</code></li>
+<li>But you can also write your own functions</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Howdy!'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Howdy!!!'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello there.'</span><span class="token punctuation">)</span>
+hello<span class="token punctuation">(</span><span class="token punctuation">)</span>
+hello<span class="token punctuation">(</span><span class="token punctuation">)</span>
+hello<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Howdy!
+Howdy!!!
+Hello there.
+Howdy!
+Howdy!!!
+Hello there.
+Howdy!
+Howdy!!!
+Hello there.
+</code></pre>
+<ul>
+<li>Functions allow us to avoid duplicating code</li>
+</ul>
+<h4 id="def-statements-with-parameters">def Statements with Parameters</h4>
+<ul>
+<li>In the <code>print()</code> or <code>len()</code> functions, you pass in values, called <strong>arguments</strong></li>
+<li>You can also define your own functions that accept arguments</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello '</span> <span class="token operator">+</span> name<span class="token punctuation">)</span>
+
+hello<span class="token punctuation">(</span><span class="token string">'Alice'</span><span class="token punctuation">)</span>
+hello<span class="token punctuation">(</span><span class="token string">'Bob'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Hello Alice
+Hello Bob
+</code></pre>
+<h4 id="return-values-and-return-statements">Return Values and return Statements</h4>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> random
+<span class="token keyword">def</span> <span class="token function">getAnswer</span><span class="token punctuation">(</span>answerNumber<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> answerNumber <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'It is certain'</span>
+    <span class="token keyword">elif</span> answerNumber <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'It is decidedly so'</span>
+    <span class="token keyword">elif</span> answerNumber <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Yes'</span>
+    <span class="token keyword">elif</span> answerNumber <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Reply hazy try again'</span>
+    <span class="token keyword">elif</span> answerNumber <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Ask again later'</span>
+    <span class="token keyword">elif</span> answerNumber <span class="token operator">==</span> <span class="token number">6</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Concentrate and ask again'</span>
+    <span class="token keyword">elif</span> answerNumber <span class="token operator">==</span> <span class="token number">7</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'My reply is no'</span>
+    <span class="token keyword">elif</span> answerNumber <span class="token operator">==</span> <span class="token number">8</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Outlook not so good'</span>
+    <span class="token keyword">elif</span> answerNumber <span class="token operator">==</span> <span class="token number">9</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Very doubtful'</span>
+
+r <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span>
+fortune <span class="token operator">=</span> getAnswer<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>fortune<span class="token punctuation">)</span>
+</code></pre>
+<h4 id="the-none-value">The None Value</h4>
+<ul>
+<li>In Python there is a value called <code>None</code>, which represents the absence of a value</li>
+<li><code>None</code> is the only value of the <code>NoneType</code> data type. (Other programming languages might call this value <code>null</code>, <code>nil</code>, or <code>undefined</code>)</li>
+</ul>
+<h4 id="keyword-arguments-and-print">Keyword Arguments and print()</h4>
+<ul>
+<li><strong>Keyword arguments</strong> are identified by the keyword put before them in the function call</li>
+<li>Keyword arguments are often used for optional parameters</li>
+</ul>
+<h4 id="local-and-global-scope">Local and Global Scope</h4>
+<ul>
+<li>Parameters and variables that are assigned in a called function are said to exist in that function’s <strong>local scope</strong></li>
+<li>Variables that are assigned outside all functions are said to exist in the <strong>global scope</strong></li>
+<li>Code in the global scope cannot use any local variables</li>
+<li>However, a local scope can access global variables</li>
+<li>Code in a function’s local scope cannot use variables in any other local scope</li>
+<li>You can use the same name for different variables if they are in different scopes. That is, there can be a local variable named <code>spam</code> and a global variable also named <code>spam</code></li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">spam</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    eggs <span class="token operator">=</span> <span class="token number">31337</span>
+spam<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>eggs<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Traceback (most recent call last):
+  File "C:/test3784.py", line 4, in &lt;module&gt;
+    print(eggs)
+NameError: name 'eggs' is not defined
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">spam</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    eggs <span class="token operator">=</span> <span class="token number">99</span>
+    bacon<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>eggs<span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> <span class="token function">bacon</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+      ham <span class="token operator">=</span> <span class="token number">101</span>
+    eggs <span class="token operator">=</span> <span class="token number">0</span>
+
+spam<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>99
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">spam</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>eggs<span class="token punctuation">)</span>
+eggs <span class="token operator">=</span> <span class="token number">42</span>
+spam<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>eggs<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>42
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"> <span class="token keyword">def</span> <span class="token function">spam</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> eggs
+    eggs <span class="token operator">=</span> <span class="token string">'spam'</span>
+
+eggs <span class="token operator">=</span> <span class="token string">'global'</span>
+spam<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>eggs<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>spam
+</code></pre>
+<p>There are four rules to tell whether a variable is in a local scope or global scope:</p>
+<ol>
+<li>If a variable is being used in the global scope (that is, outside of all functions), then it is always a global variable.</li>
+<li>If there is a global statement for that variable in a function, it is a global variable.</li>
+<li>Otherwise, if the variable is used in an assignment statement in the function, it is a local variable.</li>
+<li>But if the variable is not used in an assignment statement, it is a global variable.</li>
+</ol>
+<h3 id="strings">Strings</h3>
+<h4 id="string-literals">String Literals</h4>
+<ul>
+<li>Typing the string <code>'That is Alice's cat.'</code> in Python won’t work because the string will end after <code>Alice</code></li>
+<li>Several ways to solve this problem</li>
+</ul>
+<h4 id="double-quotes">Double Quotes</h4>
+<ul>
+<li>Strings can begin and end with double quotes</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python">spam <span class="token operator">=</span> <span class="token string">"That is Alice's cat."</span>
+</code></pre>
+<h4 id="escape-characters">Escape Characters</h4>
+<ul>
+<li>An <strong>escape character</strong> lets you use characters that are otherwise impossible to put into a string</li>
+<li>An escape character consists of a backslash <code>\</code> followed by the character you want to add to the string.</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python">spam <span class="token operator">=</span> <span class="token string">'Say hi to Bob\'s mother.'</span>
+</code></pre>
+<ul>
+<li>Escape characters you can use:</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Escape Character</th>
+<th>Print as</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\'</code></td>
+<td>Single quote</td>
+</tr>
+<tr>
+<td><code>\"</code></td>
+<td>Double quote</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>Tab</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>Newline (line break)</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>Backslash</td>
+</tr>
+</tbody>
+</table><pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello there!\nHow are you?\nI\'m doing fine."</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Hello there!
+How are you?
+I'm doing fine.
+</code></pre>
+<h4 id="raw-strings">Raw Strings</h4>
+<ul>
+<li>You can place an <code>r</code> before the beginning quotation mark of a string to make it a <strong>raw string</strong></li>
+<li>A <strong>raw string</strong> completely ignores all escape characters and prints any backslash that appears in the string</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token string">'That is Carol\'s cat.'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>That is Carol\'s cat.
+</code></pre>
+<h4 id="multiline-strings-with-triple-quotes">Multiline Strings with Triple Quotes</h4>
+<ul>
+<li>A <strong>multiline string</strong> begins and ends with either three single or three double quotes</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token triple-quoted-string string">'''Dear Alice,
+Eve's cat has been arrested for catnapping, cat burglary, and extortion.
+Sincerely,
+Bob'''</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Dear Alice,
+Eve's cat has been arrested for catnapping, cat burglary, and extortion.
+Sincerely,
+Bob
+</code></pre>
+<h4 id="multiline-comments">Multiline Comments</h4>
+<pre class=" language-python"><code class="prism  language-python"><span class="token triple-quoted-string string">"""This is a test Python program.
+Written by Al Sweigart al@inventwithpython.com
+This program was designed for Python 3, not Python 2.
+"""</span>
+<span class="token keyword">def</span> <span class="token function">spam</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token triple-quoted-string string">"""This is a multiline comment to help
+explain what the spam() function does."""</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello!'</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="indexing-and-slicing-with-strings">Indexing and Slicing with Strings</h4>
+<ul>
+<li>Strings use indexes and slices the same way lists do</li>
+</ul>
+<pre><code>' H e l l o w o r l d ! '
+0 1 2 3 4 5 6 7 8 9 10 11
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token string">'Hello world!'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token string">'H'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token string">'o'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token string">'!'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token string">'Hello'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token string">'Hello'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+<span class="token string">'world!'</span>
+</code></pre>
+<h4 id="the-in-and-not-in-operators-with-strings">The in and not in Operators with Strings</h4>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span> <span class="token keyword">in</span> <span class="token string">'Hello World'</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span> <span class="token keyword">in</span> <span class="token string">'Hello'</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'HELLO'</span> <span class="token keyword">in</span> <span class="token string">'Hello World'</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">''</span> <span class="token keyword">in</span> <span class="token string">'spam'</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'cats'</span> <span class="token operator">not</span> <span class="token keyword">in</span> <span class="token string">'cats and dogs'</span>
+<span class="token boolean">False</span>
+</code></pre>
+<h4 id="the-upper-lower-isupper-and-islower-string-methods">The upper(), lower(), isupper(), and islower() String Methods</h4>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token string">'Hello world!'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> spam<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token string">'HELLO WORLD!'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> spam<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam
+<span class="token string">'hello world!'</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'How are you?'</span><span class="token punctuation">)</span>
+feeling <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> feeling<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'great'</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'I feel great too.'</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'I hope the rest of your day is good.'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>How are you?
+GREat
+I feel great too.
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token string">'Hello world!'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>islower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span><span class="token string">'HELLO'</span><span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'abc12345'</span><span class="token punctuation">.</span>islower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'12345'</span><span class="token punctuation">.</span>islower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'12345'</span><span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'HELLO'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'hello'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'HELLO'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'HELLO'</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'hello'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'HELLO'</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>islower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+</code></pre>
+<h4 id="the-is-x-string-methods">The is X String Methods</h4>
+<ul>
+<li><code>isalpha()</code> returns True if the string consists only of letters and is not blank.</li>
+<li><code>isalnum()</code> returns True if the string consists only of letters and numbers and is not blank.</li>
+<li><code>isdecimal()</code> returns True if the string consists only of numeric characters and is not blank.</li>
+<li><code>isspace()</code> returns True if the string consists only of spaces, tabs, and new-lines and is not blank.</li>
+<li><code>istitle()</code> returns True if the string consists only of words that begin with an uppercase letter followed by only lowercase letters.</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'hello'</span><span class="token punctuation">.</span>isalpha<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'hello123'</span><span class="token punctuation">.</span>isalpha<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'hello123'</span><span class="token punctuation">.</span>isalnum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'hello'</span><span class="token punctuation">.</span>isalnum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'123'</span><span class="token punctuation">.</span>isdecimal<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">' '</span><span class="token punctuation">.</span>isspace<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'This Is Title Case'</span><span class="token punctuation">.</span>istitle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'This Is Title Case 123'</span><span class="token punctuation">.</span>istitle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'This Is not Title Case'</span><span class="token punctuation">.</span>istitle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'This Is NOT Title Case Either'</span><span class="token punctuation">.</span>istitle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Enter your age:'</span><span class="token punctuation">)</span>
+age <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> age<span class="token punctuation">.</span>isdecimal<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">break</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Please enter a number for your age.'</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Select a new password (letters and numbers only):'</span><span class="token punctuation">)</span>
+password <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> password<span class="token punctuation">.</span>isalnum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">break</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Passwords can only have letters and numbers.'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Enter your age:
+forty two
+Please enter a number for your age.
+Enter your age:
+42
+Select a new password (letters and numbers only):
+secr3t!
+Passwords can only have letters and numbers.
+Select a new password (letters and numbers only):
+secr3t
+</code></pre>
+<h4 id="the-startswith-and-endswith-string-methods">The startswith() and endswith() String Methods</h4>
+<ul>
+<li>The <code>startswith()</code> and <code>endswith()</code> methods return <code>True</code> if the string value they are called on begins or ends (respectively) with the string passed to the method; otherwise, they return False</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello world!'</span><span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello world!'</span><span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'world!'</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'abc123'</span><span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">'abcdef'</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'abc123'</span><span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'12'</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello world!'</span><span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">'Hello world!'</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello world!'</span><span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'Hello world!'</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+</code></pre>
+<h4 id="the-join-and-split-string-methods">The join() and split() String Methods</h4>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">', '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'cats'</span><span class="token punctuation">,</span> <span class="token string">'rats'</span><span class="token punctuation">,</span> <span class="token string">'bats'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token string">'cats, rats, bats'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">' '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'My'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'is'</span><span class="token punctuation">,</span> <span class="token string">'Simon'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token string">'My name is Simon'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'ABC'</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'My'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'is'</span><span class="token punctuation">,</span> <span class="token string">'Simon'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token string">'MyABCnameABCisABCSimon'</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'My name is Simon'</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'My'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'is'</span><span class="token punctuation">,</span> <span class="token string">'Simon'</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>By default <code>split()</code> splits on whitespace</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'MyABCnameABCisABCSimon'</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'ABC'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'My'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'is'</span><span class="token punctuation">,</span> <span class="token string">'Simon'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'My name is Simon'</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'m'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'My na'</span><span class="token punctuation">,</span> <span class="token string">'e is Si'</span><span class="token punctuation">,</span> <span class="token string">'on'</span><span class="token punctuation">]</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python">spam <span class="token operator">=</span> <span class="token triple-quoted-string string">'''Dear Alice,
+How have you been? I am fine.
+There is a container in the fridge
+that is labeled "Milk Experiment".
+Please do not drink it.
+Sincerely,
+Bob'''</span>
+spam<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>['Dear Alice,', 'How have you been? I am fine.', 'There is a container in the
+fridge', 'that is labeled "Milk Experiment".', '', 'Please do not drink it.',
+'Sincerely,', 'Bob']
+</code></pre>
+<h4 id="justifying-text-with-rjust-ljust-and-center">Justifying Text with rjust(), ljust(), and center()</h4>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>rjust<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token string">' Hello'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>rjust<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token string">' Hello'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello World'</span><span class="token punctuation">.</span>rjust<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token string">' Hello World'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>ljust<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token string">'Hello '</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>rjust<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'*'</span><span class="token punctuation">)</span>
+<span class="token string">'***************Hello'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>ljust<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">)</span>
+<span class="token string">'Hello---------------'</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>center<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token string">' Hello '</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Hello'</span><span class="token punctuation">.</span>center<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'='</span><span class="token punctuation">)</span>
+<span class="token string">'=======Hello========'</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">printPicnic</span><span class="token punctuation">(</span>itemsDict<span class="token punctuation">,</span> leftWidth<span class="token punctuation">,</span> rightWidth<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'PICNIC ITEMS'</span><span class="token punctuation">.</span>center<span class="token punctuation">(</span>leftWidth <span class="token operator">+</span> rightWidth<span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> itemsDict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>k<span class="token punctuation">.</span>ljust<span class="token punctuation">(</span>leftWidth<span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">.</span>rjust<span class="token punctuation">(</span>rightWidth<span class="token punctuation">)</span><span class="token punctuation">)</span>
+picnicItems <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'sandwiches'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'apples'</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token string">'cups'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'cookies'</span><span class="token punctuation">:</span> <span class="token number">8000</span><span class="token punctuation">}</span>
+printPicnic<span class="token punctuation">(</span>picnicItems<span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+printPicnic<span class="token punctuation">(</span>picnicItems<span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>---PICNIC ITEMS--
+sandwiches.. 4
+apples...... 12
+cups........ 4
+cookies..... 8000
+-------PICNIC ITEMS-------
+sandwiches.......... 4
+apples.............. 12
+cups................ 4
+cookies............. 8000
+</code></pre>
+<h4 id="removing-whitespace-with-strip-rstrip-and-lstrip">Removing Whitespace with strip(), rstrip(), and lstrip()</h4>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token string">' Hello World '</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Hello World'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>lstrip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Hello World '</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>rstrip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">' Hello World'</span>
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam <span class="token operator">=</span> <span class="token string">'SpamSpamBaconSpamEggsSpamSpam'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> spam<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token string">'ampS'</span><span class="token punctuation">)</span>
+<span class="token string">'BaconSpamEggs'</span>
+</code></pre>
+<h3 id="pig-latin-example-program">Pig Latin Example Program</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># Name:</span>
+<span class="token comment"># Large Project: Pig Latin</span>
+<span class="token comment"># piglatin.py</span>
+
+<span class="token triple-quoted-string string">"""
+Google -&gt; ooglegay
+frog -&gt; rogfay
+ate -&gt; ateway
+
+Have a nice day
+avehay away icenay ayday
+"""</span>
+
+vowels <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> <span class="token string">'u'</span><span class="token punctuation">)</span>
+
+
+
+
+<span class="token keyword">def</span> <span class="token function">convert_word</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Converts an individual word to piglatin
+    
+    :param word (String) The word to convert
+    
+    :return (String) the word in piglatin
+    
+    Helper function that converts one word into Pig-Latin. Remember, our word is
+    the function's argument, like 4 is the argument in sqrt(4). We don't need to
+    know anything about the sentence from which the word came.
+    
+    Also, remember that strings are index-able, just like lists and tuples. But,
+    they are immutable, like tuples. So when we want to append "ay" or "hay" to
+    the end, we can't use append(). But, we can use the string concatenation (+)
+    operator to return a new string.
+    
+    e.g. we can't do "a".append("b"), but we can do "a" + "b".
+    For error handling purposes, you should convert each word to lowercase using word.lower()
+    """</span>
+    
+    wordInPigLatin <span class="token operator">=</span> <span class="token string">""</span>
+    <span class="token comment">####### YOUR CODE HERE ######</span>
+
+    <span class="token comment">####### YOUR CODE HERE ######</span>
+    <span class="token keyword">return</span> wordInPigLatin
+
+
+<span class="token keyword">def</span> <span class="token function">convert_sentence</span><span class="token punctuation">(</span>sentence<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Convert a sentence to piglatin
+    
+    Makes use of convert_word() to convert the sentence.
+    
+    :param sentence (String) The sentence to convert
+    
+    :return (String) The sentence in piglatin
+    """</span>
+    new_sentence <span class="token operator">=</span> <span class="token string">""</span>
+    <span class="token comment">####### YOUR CODE HERE ######</span>
+
+    <span class="token comment">####### YOUR CODE HERE ######</span>
+    <span class="token keyword">return</span> new_sentence
+
+
+<span class="token comment"># The main program</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Type in your sentence to be converted to Pig-Latin!'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Please don't use punctuation or numbers."</span><span class="token punctuation">)</span>
+
+text <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
+                  
+<span class="token keyword">print</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>convert_sentence<span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+</div>
+</body>
+
+</html>
