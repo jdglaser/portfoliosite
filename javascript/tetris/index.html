@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tetris</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        body {
+            background: #202028;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 2em;
+            text-align: center;
+        }
+        canvas {
+            border: solid .2em #fff;
+            height: 70vh;
+
+        }
+        .controls {
+            margin-top: 10px;
+            -webkit-user-select: none; /* Chrome/Safari */        
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE10+ */
+
+            /* Rules below not implemented in browsers yet */
+            -o-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div><span>Score: </span><span id="score"></span></div>
+    <canvas id="game" width="240" height=400></canvas>
+    <div class="controls">
+        <span id='rotateL' onmouseup="this.style.opacity = '1'" onmousedown="this.style.opacity = '0.5'"><i class="fas fa-undo fa-lg"></i></span>
+        <span id='left' onmouseup="this.style.opacity = '1'" onmousedown="this.style.opacity = '0.5'"><i class="fas fa-arrow-circle-left fa-lg"></i></span>
+        <span id='right' onmouseup="this.style.opacity = '1'" onmousedown="this.style.opacity = '0.5'"><i class="fas fa-arrow-circle-right fa-lg"></i></span>
+        <span id='rotateR' onmouseup="this.style.opacity = '1'" onmousedown="this.style.opacity = '0.5'"><i class="fas fa-undo fa-lg fa-flip-horizontal"></i></span>
+    </div>
+    <div class="controls">
+        <span id='down' onmouseup="this.style.opacity = '1'" onmousedown="this.style.opacity = '0.5'"><i class="fas fa-arrow-circle-down fa-lg"></i></span>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
