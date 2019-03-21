@@ -99,8 +99,11 @@ function drawShape(shape, offset) {
     shape.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
-                ctx.fillStyle = colors[value]
-                ctx.fillRect(x*blockSize + offset.x*20, y*blockSize + offset.y*20, blockSize, blockSize)
+                //ctx.fillStyle = colors[value]
+                //ctx.fillRect(x*blockSize + offset.x*20, y*blockSize + offset.y*20, blockSize, blockSize)
+                drawing = new Image();
+                drawing.src = colors[value];
+                ctx.drawImage(drawing,x*blockSize + offset.x*20, y*blockSize + offset.y*20)
             }
         });
     });
@@ -187,13 +190,13 @@ function rotate(matrix, dir) {
 
 const colors = [
     null,
-    'red',
-    'blue',
-    'violet',
-    'green',
-    'magenta',
-    'orange',
-    'pink'
+    '/img/blockRed.jpg',
+    '/img/blockOrange.jpg',
+    '/img/blockYellow.jpg',
+    '/img/blockGreen.jpg',
+    '/img/blockBlue.jpg',
+    '/img/blockPurple.jpg',
+    '/img/blockLightBlue.jpg'
 ]
 
 const arena = createShape(12,20);
