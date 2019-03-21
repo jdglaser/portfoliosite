@@ -190,13 +190,13 @@ function rotate(matrix, dir) {
 
 const colors = [
     null,
-    '/img/blockRed.jpg',
-    '/img/blockOrange.jpg',
-    '/img/blockYellow.jpg',
-    '/img/blockGreen.jpg',
-    '/img/blockBlue.jpg',
-    '/img/blockPurple.jpg',
-    '/img/blockLightBlue.jpg'
+    './img/blockRed.jpg',
+    './img/blockOrange.jpg',
+    './img/blockYellow.jpg',
+    './img/blockGreen.jpg',
+    './img/blockBlue.jpg',
+    './img/blockPurple.jpg',
+    './img/blockLightBlue.jpg'
 ]
 
 const arena = createShape(12,20);
