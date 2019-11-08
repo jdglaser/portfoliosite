@@ -179,7 +179,7 @@ text-decoration: inherit;
 .grid-container-2 {
     display: grid;
     grid-column-gap: 20px;
-    grid-template-columns: 50px 175px 175px;
+    grid-template-columns: 50px 175px 175px 175px;
     grid-gap: 10px;
 }
 
