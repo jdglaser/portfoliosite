@@ -10,6 +10,7 @@ $('.raise-item').hover(
     }
   });
 
+// Expand Function
 $('.expand').click(function(){
   var $expand = $(this).attr('expand')
   if ($(this).is(".fa-plus")) {
